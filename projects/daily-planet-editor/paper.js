@@ -11,7 +11,7 @@ function whoWins(isThereKryptonite, enemyName) {
             return ("Who would win, " + enemyName + " or Superman? Superman beats " + enemyName + ", of course.");
         } else {
 
-            return ("Who would win, " + enemyName + " or Superman? Batman always wins!");
+            return ("Who would win, " + enemyName + " or Superman? Batman always wins.");
         }
     } else {
 
