@@ -1,0 +1,45 @@
+body {
+    width: 75%;
+    margin: auto;
+/*    background-color: black;*/
+}
+
+header {
+    margin-top: 5em;
+    height: 7em;
+    border-bottom: solid white .5em;
+}
+section {
+    height: 7em;
+    border-bottom: solid white .5em;
+}
+footer {
+    height: 7em;
+}
+
+p {
+    display: inline-block;
+    width: 10em;
+    height: 100%;
+    background-color: #EE2E84;
+    padding: 0;
+    margin: 0;
+    border-right: solid white .5em;
+    
+}
+.bottom {
+    width: 20.75em;
+    background-color: #85CFD8;
+    
+}
+.top {
+    background-color: #F5C6D6;
+    width: 42.25em;
+}
+.rock1 {
+    background-color: #8DC63F;
+    width: 31.5em;
+}
+.rock2 {
+    background-color: #E76E34;
+}

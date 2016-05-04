@@ -4,6 +4,7 @@ var powerRanger = {
     colors: ["Red"],
     beasts: ["T-Rex", "Ape"],
     villainsDefeated: ["Rita", "Zed", "Goldar"],
+    awesome: false,
     rangersHookedUpWith: [
         {
             name: "Kim",
@@ -11,8 +12,8 @@ var powerRanger = {
             colors: ["Pink"],
             beasts: ["Pterodactyl", "Crane"],
             villainsDefeated: ["Finster", "Scorpina"],
+            awesome: true,    
             otherRangersHookedUpWith: [
-
                 {
                     name: "Zack",
                     age: 17,
@@ -33,12 +34,16 @@ var powerRanger = {
                     colors: ["Yellow"],
                     beasts: ["Sabertooth Tiger", "Bear"],
                     villainsDefeated: ["Hydro Hog"]
-                },
-
-            ]
+                    }
+                ],
+             rangerLevel: function () {
+                        return (this.villainsDefated.length + this.otherRangersHookedUpWith.length);
+                    }
         }
-    ]
-}
+    ],
+    rangerLevel: function () {
+         return (this.villainsDefeated + this.rangersHookedUpWith.length);
+     }
+};
 
-
-console.log(powerRanger.rangersHookedUpWith[0].otherRangersHookedUpWith.length);
+console.log(powerRanger.rangerLevel);
