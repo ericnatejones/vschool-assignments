@@ -1,0 +1,76 @@
+html{
+    background-image: url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/lined_paper.png");
+    background-repeat: repeat;
+    background-attachment: fixed;
+   
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    color: #272F32;
+    width: 75%;
+    margin:auto;
+    padding: 1em;
+    font-size: larger;
+    padding-bottom: 10em;
+    border-style: ridge;
+    border-color: gray;
+    border-width: .2em;
+    background-color: white;
+    margin-top: 3em;
+}
+
+h1 {
+    text-align: center;
+    margin: 1em 0em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 2.7em;
+}
+
+.navbar {
+/*    border: solid black .1em;*/
+    text-align: center;
+    background-color: #FFFFFF;
+    padding: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.navbar li {
+    display: inline-block;
+    padding: .5em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.code-photo {
+    max-width: 460px;
+    float: left;
+    margin: 0em 1em 1em 0;
+    border: solid #9DBDC6 .3em;
+}
+
+p {
+    text-align: justify;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+li {
+    list-style-position: inside;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+a {
+    color: #FF3D2E;
+}
+
+a:hover {
+    color: #9DBDC6;
+}
