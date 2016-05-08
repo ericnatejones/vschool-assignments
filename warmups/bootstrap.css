@@ -1,0 +1,16 @@
+h1 {
+    vertical-align: middle;
+    text-align: center;
+    margin-top: 8em;
+}
+
+button {
+    margin: auto;
+    text-align: center;
+    margin: 2em;
+}
+
+nav {
+   text-align: center;
+    margin: auto;
+}

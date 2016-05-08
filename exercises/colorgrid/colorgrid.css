@@ -1,47 +1,102 @@
 body {
-    width: 75%;
+    width: 80%;
     margin: auto;
-    background-image: img()
-/*    background-color: black;*/
+    height: 35em;
 }
 
-header {
-    margin-top: 5em;
-    height: 7em;
-    border-bottom: solid white .5em;
-}
-section {
-    height: 7em;
-    border-bottom: solid white .5em;
-    list-style-position: 
-}
-footer {
-    height: 7em;
-}
-
-p {
-    display: inline-block;
-    width: 10em;
-    height: 100%;
-    background-color: #EE2E84;
-    padding: 0;
-    margin: 0;
-    border-right: solid white .5em;
-    
-}
-.bottom {
-    width: 20.75em;
-    background-color: #85CFD8;
-    
-}
 .top {
     background-color: #F5C6D6;
-    width: 42.25em;
+    width: 100%;
+    height: 25%;
+    display: inline-block;
+    box-sizing: border-box;
+    float: left;
+    margin-top: 5%;
+    border-style: solid;
+    border-color: white;
+    border-width: 5px;
 }
+
+.mid {
+    background-color: #EE2E84;
+    width: 25%;
+    height: 25%;
+    display: inline-block;
+    box-sizing: border-box;
+    float: left;
+    border-style: solid;
+    border-color: white;
+    border-width: 5px;
+}
+
+.bottom {
+    background-color: #85CFD8;
+    width: 50%;
+    height: 25%;
+    display: inline-block;
+    box-sizing: border-box;
+    float: left;
+    border-style: solid;
+    border-color: white;
+    border-width: 5px;
+}
+
 .rock1 {
     background-color: #8DC63F;
-    width: 31.5em;
+    width: 75%;
+    height: 25%;
+    display: inline-block;
+    box-sizing: border-box;
+    float: left;
+    border-style: solid;
+    border-color: white;
+    border-width: 5px;
 }
+
 .rock2 {
     background-color: #E76E34;
+    width: 25%;
+    height: 25%;
+    display: inline-block;
+    box-sizing: border-box;
+    float: left;
+    border-style: solid;
+    border-color: white;
+    border-width: 5px;
+}
+
+@media screen and (max-width: 900px) {
+    .top {
+        width: 100%;
+    }
+    .mid {
+        width: 50%;
+    }
+    .bottom {
+        width: 100%;
+    }
+    .rock1 {
+        width: 100%;
+    }
+    .rock2 {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .top {
+        width: 100%;
+    }
+    .mid {
+        width: 100%;
+    }
+    .bottom {
+        width: 100%;
+    }
+    .rock1 {
+        width: 100%;
+    }
+    .rock2 {
+        width: 100%;
+    }
 }

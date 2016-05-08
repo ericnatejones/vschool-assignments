@@ -1,0 +1,14 @@
+
+.table {
+    width:50%;
+    text-align: justify;
+    margin:auto;
+    margin-top: 10em;
+    font-size: 1.5em;
+    border: solid;
+    background-color: 
+}
+
+thead {
+    text-decoration: underline;
+}

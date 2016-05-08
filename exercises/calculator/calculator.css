@@ -1,0 +1,38 @@
+body {
+    width: 75%;
+    margin: auto;
+    text-align: center;
+    padding: 5em;
+}
+.form-control {
+    width: 7em;
+    display: inline;
+    box-sizing: border-box;
+    margin: 2em; 2em;
+    text-align: center;
+    opacity: .5;
+    
+
+}
+.btn {
+    display: inline;
+    vertical-align: middle;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+h1 {
+    margin: 2em;
+}
+
+input {
+    opacity: .5;
+}
+
+.btn {
+    display: inline;
+    vertical-align: middle;
+    height: 100%;
+    box-sizing: border-box;
+    opacity: 1;
+}
