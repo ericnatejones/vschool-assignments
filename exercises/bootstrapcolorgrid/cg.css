@@ -1,0 +1,30 @@
+
+div {
+    height: 150px;
+    border: white solid .5em;
+}
+
+.one {
+    background-color: #F5C6D6;
+
+}
+
+.two {
+    background-color: #EE2E84;
+
+}
+
+.three {
+    background-color: #85CFD8;
+   
+}
+
+.four {
+    background-color: #8DC63F;
+  
+}
+
+.five {
+    background-color: #E76E34;
+    
+}

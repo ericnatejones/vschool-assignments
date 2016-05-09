@@ -1,0 +1,55 @@
+@font-face {
+    font-family: SuperMario;
+    src: url("SuperMario256.ttf");
+}
+
+* {
+    box-sizing: border-box;
+    font-family: SuperMario;
+}
+
+.c {
+    height: 200px;
+}
+
+img {
+    max-height: 95%;
+    padding: 5px;
+}
+
+.header {
+    background-color: green;
+    color: white;
+    height: 100px;
+}
+
+.luigi {
+    background-color: blue;
+    height: 300px;
+    text-align: center;
+    padding: 1em;
+}
+
+.shroom {
+    background-color: green;
+    text-align: right;
+    height: 75px;
+}
+
+.about {
+    text-align: center;
+    color: blue;
+    padding: 1em;
+}
+
+p {
+    font-size: 1em;
+    margin: auto;
+}
+
+#luigi {}
+
+h1 {
+    font-size: 3.5em;
+    margin-left: 1em;
+}
