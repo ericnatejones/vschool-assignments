@@ -1,0 +1,13 @@
+body {
+    background-color: skyblue;
+}
+
+.container {
+    border: solid 1px gray;
+    border-radius: 25px;
+    width: 35%;
+    box-shadow: 10px 10px 5px #888888;
+    background-color:white;
+    margin:auto;
+    margin-top: 2em;
+}

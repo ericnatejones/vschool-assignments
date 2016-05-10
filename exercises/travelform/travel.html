@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Travel Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="travel.css">
+</head>
+
+<body>
+    <div class="container">
+        <form action="" name="myTravelForm">
+            <fieldset>
+                <legend>Travel Information: </legend>
+                <div class="form-group">
+                    <label for="firstName">First Name: </label>
+                    <input class="form-control" type="text" name="firstName" value="">
+                </div>
+                <div class="form-group">
+                    <label for="firstName">Last Name: </label>
+                    <input class="form-control" type="text" name="lastName" value="">
+                </div>
+                <div class="form-group">
+                    <label for="firstName">Age: </label>
+                    <input class="form-control" type="number" name="ageValue" value="">
+                </div>
+                <div class="form-group">
+                    <label for="firstName">Gender: </label>
+                    <br>
+                    <input type="radio" name="gender" value="male" checked> Male
+                    <br>
+                    <input type="radio" name="gender" value="female"> Female
+                    <br>
+                    <input type="radio" name="gender" value="other"> Other
+                </div>
+                <div class="form-group">
+                    <label for="firstName">Traveling to: </label>
+                    <select class="form-control" name="locale" value=" ">
+                        <option value="Ireland">Ireland</option>
+                        <option value="Portland">Portland</option>
+                        <option value="Washington">Washington DC</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="firstName">Diet Preferences: </label>
+                    <br>
+                    <input type="checkbox"name="diet" value="vegetarian"> Vegetarian
+                    <br>
+                    <input type="checkbox" name="diet" value="vegan"> Vegan
+                    <br>
+                    <input type="checkbox" name="diet" value="peanuts"> Peanuts
+                    <br>
+                    <input type="checkbox" name="diet" value="Dairy"> Dairy
+                    <br>
+                    <input type="checkbox" name="diet" value="Donuts"> Donuts
+                    <br>
+                    <input type="checkbox" name="diet" value="alcohol"> Alcohol
+                </div>
+                <div class="form-group">
+                    <input class="form-control btn btn-primary" id="submit" type="submit" value="Submit">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <script src="travel.js">
+    </script>
+</body>
+
+</html>

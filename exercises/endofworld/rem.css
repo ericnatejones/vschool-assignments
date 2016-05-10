@@ -1,0 +1,24 @@
+body {
+    background-image: url(6975466-end-of-the-world.jpg);
+    background-repeat: no-repeat;
+}
+
+h1,
+h2 {
+    font-family: 'VT323';
+    text-align: center;
+    opacity: 1;
+    color: red;
+    font-size: 5em;
+}
+
+div {
+    margin: auto;
+    margin-top: 7em;
+    width: 50%;
+    padding: 5em;
+    opacity: .3;
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 25px;
+}
