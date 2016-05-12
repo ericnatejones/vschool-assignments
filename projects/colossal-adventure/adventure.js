@@ -28,42 +28,42 @@ var ask = require('readline-sync'),
         }, {
             index: 1,
             name: "Excalibur",
-            attackPower: [60, 120]
+            attackPower: [60, 200]
         }
     ],
     beasts = [
         {
             name: "Dragon",
             healthPower: 300,
-            attackPower: [120, 320]
+            attackPower: [200, 300]
         }, {
             name: "Lich",
-            healthPower: 80,
-            attackPower: [80, 120],
+            healthPower: 75,
+            attackPower: [110, 160],
             hpSpoil: 160,
             weaponSpoil: weapons[5]
         }, {
             name: "Troll",
-            healthPower: 40,
-            attackPower: [50, 80],
+            healthPower: 50,
+            attackPower: [70, 110],
             hpSpoil: 80,
             weaponSpoil: weapons[4]
         }, {
             name: "Giant Spider",
-            healthPower: 20,
-            attackPower: [30, 50],
+            healthPower: 30,
+            attackPower: [40, 70],
             hpSpoil: 40,
             weaponSpoil: weapons[3]
         }, {
             name: "Jigglypuff",
             healthPower: 10,
-            attackPower: [15, 30],
+            attackPower: [20, 40],
             hpSpoil: 20,
             weaponSpoil: weapons[2]
         }, {
             name: "Innocent Rabbit",
             healthPower: 5,
-            attackPower: [5, 10],
+            attackPower: [10, 20],
             hpSpoil: 10,
             weaponSpoil: weapons[1]
         }
@@ -72,7 +72,7 @@ var ask = require('readline-sync'),
 
 //INTRODUCTION
 
-console.log("\nYou're a long way from home, weary traveller. Darkness fills the woods around you, and a tangible evil hangs thick in the air. You're lost, aren't you?");
+console.log("\n\n\n\n\n\n\nYou're a long way from home, weary traveller. Darkness fills the woods around you, and a tangible evil hangs thick in the air. You're lost, aren't you?");
 
 var name = ask.question("\nToo bad. You've come a long way to die. Tell me, what name should we put on your tombstone?\n");
 
@@ -82,7 +82,7 @@ console.log("\nGods save you, " + name + ". A dragon lurks in these woods, and h
 
 while (gameRunning) {
 
-    var action = ask.question("\nAfter walking through the eerie forest with no incident, you take a brief rest.  The woods are quiet... fow now. Type 'print' to see your inventory, or 'w' to continue your journey.");
+    var action = ask.question("\nAfter walking through the eerie forest with no incident, you take a brief rest.  The woods are quiet... fow now. Type 'print' to see your inventory, or 'w' to continue your journey.\n");
     beastAlive = true;
 
     //PRINT ACTION
@@ -104,11 +104,11 @@ while (gameRunning) {
 
         //ENCOUNTER CHANCE
 
-        var encounterChance = Math.floor((Math.random() * 10));
+        var encounterChance = Math.random() * 10;
 
         //BEAST ENCOUNTERED
 
-        if (encounterChance < 3) {
+        if (encounterChance < 3.4) {
 
             //WHICH BEAST
 
@@ -124,13 +124,12 @@ while (gameRunning) {
             //WRONG BUTTON
 
             if ((fightOrFlight !== "run") && (fightOrFlight !== "fight")) {
-                fightOrFlight = ask.question("Choose, you fool! Before the " + beastEncountered.name + " slaughters you where you stand! Type 'fight' to attack or 'run' to flee like a sissy!\n");
+                fightOrFlight = ask.question("\nChoose, you fool! Before the " + beastEncountered.name + " slaughters you where you stand! Type 'fight' to attack or 'run' to flee like a sissy!\n");
                 var deathToggle = true;
                 if ((deathToggle) && (fightOrFlight !== "run") && (fightOrFlight !== "fight")) {
                     gameRunning = false;
                     action = "dead";
-                    console.log(gameRunning);
-                    console.log("Frozen with fear, you're defenseless as the " + beastEncountered.name + " rips into your chest and devours your insides. Screaming in agony, your final moments of torture are steeped in a single clear thought: You died a little chicken.");
+                    console.log("\nFrozen with fear, you're defenseless as the " + beastEncountered.name + " rips into your chest and devours your insides. Screaming in agony, your final moments of torture are steeped in a single clear thought: You died a little chicken.");
                     return;
 
                 }
@@ -198,8 +197,11 @@ while (gameRunning) {
                         //YOUR ATTACK
 
                         console.log("\nYou slash at the " + beastEncountered.name + " with your " + weaponEquipped.name + " do " + yourAttackPower + " damage!\n");
+                        
                         thisBeastHealthPower = thisBeastHealthPower - yourAttackPower;
+                        
                         if (thisBeastHealthPower < 1) {
+                            
                             if (beastEncountered.name === "Dragon") {
                                 gameRunning = false;
                                 action = "win";
@@ -227,6 +229,7 @@ while (gameRunning) {
                         }
 
                         //BEAST KILLS YOU
+                        
                         else {
                             beastAttack(beastAttackPower);
                             if (hp < 0) {
@@ -262,6 +265,7 @@ while (gameRunning) {
         }
 
         //END OF BEAST ENCOUNTER
+        
         else {
             break;
         }

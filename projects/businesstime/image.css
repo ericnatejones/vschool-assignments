@@ -1,0 +1,40 @@
+#image {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+}
+
+#image:hover {
+    border: solid #75EDFF 5px;
+    border-radius: 1000px;
+}
+
+.paragraph {
+    vertical-align: middle;
+    display: table-cell;
+    text-align: justify;
+    
+}
+h2 {
+    vertical-align: middle;
+    display: table-caption;
+
+}
+
+.second {
+    display: table;
+    height: 555px;
+}
+
+div {
+    vertical-align: middle;
+}
+
+.first {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.one {
+    display:table;
+}
