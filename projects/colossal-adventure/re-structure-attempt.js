@@ -3,7 +3,7 @@
 var ask = require('readline-sync'),
     gameRunning = true,
     beastAlive = true,
-    hp = 200,
+    hp = 100,
     weapons = [
         {
             index: 6,
@@ -35,35 +35,35 @@ var ask = require('readline-sync'),
         {
             name: "Dragon",
             healthPower: 300,
-            attackPower: [200, 300]
+            attackPower: [25, 50]
         }, {
             name: "Lich",
-            healthPower: 75,
-            attackPower: [110, 160],
+            healthPower: 160,
+            attackPower: [20, 25],
             hpSpoil: 160,
             weaponSpoil: weapons[5]
         }, {
             name: "Troll",
-            healthPower: 50,
-            attackPower: [70, 110],
+            healthPower: 80,
+            attackPower: [15, 20],
             hpSpoil: 80,
             weaponSpoil: weapons[4]
         }, {
             name: "Giant Spider",
-            healthPower: 30,
-            attackPower: [40, 70],
+            healthPower: 40,
+            attackPower: [10, 15],
             hpSpoil: 40,
             weaponSpoil: weapons[3]
         }, {
             name: "Jigglypuff",
-            healthPower: 10,
-            attackPower: [20, 40],
+            healthPower: 20,
+            attackPower: [5, 10],
             hpSpoil: 20,
             weaponSpoil: weapons[2]
         }, {
             name: "Innocent Rabbit",
-            healthPower: 5,
-            attackPower: [10, 20],
+            healthPower: 10,
+            attackPower: [1, 5],
             hpSpoil: 10,
             weaponSpoil: weapons[1]
         }
@@ -146,14 +146,20 @@ function encounter() {
                 victory(beastEncountered, weaponEquipped);
             } else {
                 beastAttack(beastEncountered, beastAttackPower);
-                fightOrFlight = ask.question("\nIt's still alive, and you only have " + hp + " health left! Hurry, what now? Type 'fight' to attack again or 'run' to escape like a coward!");
+                if (hp < 1) {
+                    return;
+                } else {
+                    fightOrFlight = ask.question("\nIt's still alive, and you only have " + hp + " health left! Hurry, what now? Type 'fight' to attack again or 'run' to escape like a coward!");
+                    continue;
+                }
             }
         } else if (fightOrFlight === "run") {
             flee(beastEncountered, beastAttackPower);
         } else if (fightOrFlight === "print") {
             print();
+            return;
         } else {
-            wrongButton();
+            wrongButton(beastEncountered);
         }
     }
 }
@@ -171,13 +177,18 @@ function flee(beastEncountered, beastAttackPower) {
 
         console.log("\nIt's too fast! You couldn't escape!\n");
         beastAttack(beastEncountered, beastAttackPower);
-        return;
+        if (hp < 1) {
+            return;
+        } else {
+            fightOrFlight = ask.question("\nDon't just stand there! Keep running or turn and fight! Type 'run' to keep running or 'fight' to attack.\n");
+            //        return;
+        }
     }
 }
 
 //WRONG BUTTON
 
-function wrongButton() {
+function wrongButton(beastEncountered) {
     fightOrFlight = ask.question("\nChoose, you fool! Before the " + beastEncountered.name + " slaughters you where you stand! Type 'fight' to attack or 'run' to flee like a sissy!\n");
 
     var deathToggle = true;
@@ -188,6 +199,7 @@ function wrongButton() {
         console.log("\nFrozen with fear, you're defenseless as the " + beastEncountered.name + " rips into your chest and devours your insides. Screaming in agony, your final moments of torture are steeped in a single clear thought: You died a little chicken.");
         return;
     }
+    return;
 }
 //BEAST ATTACK
 
@@ -237,7 +249,6 @@ introduction();
 
 while (gameRunning) {
 
-
     while (action === "w") {
 
         walk();
@@ -246,6 +257,10 @@ while (gameRunning) {
     while (action === "print") {
 
         print();
+    }
+    while ((action !== "w") && (action !== "print") && (action !== "dead") && (action !== "win")) {
+        console.log("\nDon't just stand there! Didn't you hear me about the DRAGON?");
+        break;
     }
 
     if (gameRunning) {

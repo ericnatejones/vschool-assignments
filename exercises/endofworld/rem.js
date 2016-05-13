@@ -1,6 +1,7 @@
 var display = document.getElementsByTagName("h1")[0],
     message = document.getElementsByTagName("h2")[0],
-    seconds = 20,
+    body = document.getElementsByTagName('body')[0],
+    seconds = 05,
     minutes = 00,
     hours = 00,
     engine,
@@ -13,12 +14,8 @@ var mm = (minutes > 9 ? minutes : "0" + minutes),
 
 display.textContent = displayTime;
 
-// Time Flow
 
 function runTimer() {
-
-
-    // Time Formatting
 
     if (seconds < 0) {
         seconds = 59;
@@ -46,10 +43,11 @@ function runTimer() {
         message.textContent = "The end of the world has come upon us";
         trigger = false;
         clearInterval(engine);
+        body.style.backgroundImage = 'url(6975466-end-of-the-world.jpg)';
+        var audio = new Audio('bomb.mp3');
+        audio.play();
         return;
-    }
-
-}
+    }}
 
 window.onload = function () {
     if (trigger) {
