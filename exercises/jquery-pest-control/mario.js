@@ -1,8 +1,8 @@
 var
     goombaTotal = $("#goombaTotalPrice"),
-    bombOmbTotal = $("#bombOmbTotalPrice").val(),
-    cheepCheepTotal = $("#cheepCheepTotalPrice").val(),
-    costBro = $("#costBro").val(),
+    bombOmbTotal = $("#bombOmbTotalPrice"),
+    cheepCheepTotal = $("#cheepCheepTotalPrice"),
+    costBro = $("#costBro"),
     goombaButton = $("#buttonGoomba"),
     bombOmbButton = $("#buttonBombOmb"),
     cheepCheepButton = $("#buttonCheepCheep"),
@@ -13,30 +13,30 @@ var
 
 function calculateTotal() {
 
-    var goomba = ($("#goombasCaught").val()) * 5;
-    var bombOmb = ($("#bombOmbsCaught").val()) * 7;
-    var cheepCheep = ($("#cheepCheepsCaught").val()) * 11;
-    var inputtwo = (+goomba + +bombOmb + +cheepCheep);
-    $("#costBro").innerHTML = ("Total Price : " + inputtwo);
+    var goomba = goombasCaught.val() * 5;
+    var bombOmb = bombOmbsCaught.val() * 7;
+    var cheepCheep = cheepCheepsCaught.val() * 11;
+    var inputtwo = (goomba += bombOmb += cheepCheep);
+    costBro.html("Total Price : " + inputtwo);
 }
 
-goombasCaught.onchange = function () {
-    var inputOne = $("#goombasCaught").val();
-    $("#goombaTotalPrice").innerHTML = ("Total Price : " + (inputOne * 5));
+goombasCaught.change(function () {
+    var inputOne = goombasCaught.val();
+    goombaTotal.html("Total Price : " + (inputOne * 5));
     calculateTotal();
 
-};
+});
 
-bombOmbsCaught.onchange = function () {
-    var inputOne = $("#bombOmbsCaught").val();
-    $("#bombOmbTotalPrice").innerHTML = ("Total Price : " + (inputOne * 7));
+bombOmbsCaught.change(function () {
+    var inputOne = bombOmbsCaught.val();
+    bombOmbTotal.html("Total Price : " + (inputOne * 7));
     calculateTotal();
 
-};
+});
 
-cheepCheepsCaught.onchange = function () {
-    var inputOne = $("#cheepCheepsCaught").val();
-    $("#cheepCheepTotalPrice").innerHTML = ("Total Price : " + (inputOne * 11));
+cheepCheepsCaught.change(function () {
+    var inputOne = cheepCheepsCaught.val();
+    cheepCheepTotal.html("Total Price : " + (inputOne * 11));
     calculateTotal();
 
-};
+});
