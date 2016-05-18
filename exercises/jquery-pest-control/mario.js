@@ -13,11 +13,16 @@ var
 
 function calculateTotal() {
 
-    var goomba = goombasCaught.val() * 5;
-    var bombOmb = bombOmbsCaught.val() * 7;
-    var cheepCheep = cheepCheepsCaught.val() * 11;
-    var inputtwo = (goomba += bombOmb += cheepCheep);
+    var goomba = goombasCaught.val() * 5,
+        bombOmb = bombOmbsCaught.val() * 7,
+        cheepCheep = cheepCheepsCaught.val() * 11,
+        inputtwo = (goomba += bombOmb += cheepCheep),
+        audio = new Audio('Mario-coin-sound.mp3');
+
+    audio.play();
+
     costBro.html("Total Price : " + inputtwo);
+
 }
 
 goombasCaught.change(function () {
@@ -40,3 +45,25 @@ cheepCheepsCaught.change(function () {
     calculateTotal();
 
 });
+var toggle = true;
+$("#pipe").click(function () {
+    if (toggle) {
+        $("body").css("background-image", "url(8-bit-dark-mario-mushroom-nintendo.jpg)");
+        $("#my_audio").get(0).play();
+        $(".entireForm").css("background-color", "black");
+        toggle = false;
+    } else {
+        $("body").css("background-image", "url(super_mario_game-wallpaper-1366x768.jpg)");
+        $("#my_audio").get(0).play();
+        $(".entireForm").css("background-color", "#0dd6ff");
+        toggle = true;
+
+    }
+});
+
+
+
+JS:
+    $(document).ready(function () {
+
+    });

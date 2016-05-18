@@ -3,88 +3,87 @@
 var ask = require('readline-sync'),
     gameRunning = true,
     beastAlive = true,
-    hp = 100,
+    hp = 25,
     weapons = [
         {
             index: 6,
             name: "Rusty Dagger",
-            attackPower: [1, 5]
+            attackPower: [2, 4]
         }, {
             index: 5,
             name: "Dirk",
-            attackPower: [5, 10]
+            attackPower: [3, 5]
         }, {
             index: 4,
             name: "Short Sword",
-            attackPower: [10, 15]
+            attackPower: [4, 6]
         }, {
             index: 3,
             name: "Long Sword",
-            attackPower: [15, 30]
+            attackPower: [5, 7]
         }, {
             index: 2,
             name: "Flame Sword",
-            attackPower: [30, 60]
+            attackPower: [6, 8]
         }, {
             index: 1,
             name: "Excalibur",
-            attackPower: [60, 200]
+            attackPower: [10, 20]
         }
     ],
     beasts = [
         {
             name: "Dragon",
-            healthPower: 300,
-            attackPower: [25, 50]
+            healthPower: 50,
+            attackPower: [15, 20]
         }, {
             name: "Lich",
-            healthPower: 160,
-            attackPower: [20, 25],
-            hpSpoil: 160,
+            healthPower: 35,
+            attackPower: [7, 9],
+            hpSpoil: 25,
             weaponSpoil: weapons[5]
         }, {
             name: "Troll",
-            healthPower: 80,
-            attackPower: [15, 20],
-            hpSpoil: 80,
+            healthPower: 25,
+            attackPower: [6, 8],
+            hpSpoil: 20,
             weaponSpoil: weapons[4]
         }, {
             name: "Giant Spider",
-            healthPower: 40,
-            attackPower: [10, 15],
-            hpSpoil: 40,
+            healthPower: 18,
+            attackPower: [5, 7],
+            hpSpoil: 16,
             weaponSpoil: weapons[3]
         }, {
             name: "Jigglypuff",
-            healthPower: 20,
-            attackPower: [5, 10],
-            hpSpoil: 20,
+            healthPower: 13,
+            attackPower: [4, 6],
+            hpSpoil: 13,
             weaponSpoil: weapons[2]
         }, {
             name: "Innocent Rabbit",
-            healthPower: 10,
-            attackPower: [1, 5],
+            healthPower: 8,
+            attackPower: [2, 4],
             hpSpoil: 10,
             weaponSpoil: weapons[1]
         }
     ],
     inventory = [weapons[0]],
     action,
+    fightorFlight,
     name;
-
 
 //INTRODUCTION
 
 function introduction() {
 
-    console.log("\n\n\n\n\n\n\nYou're a long way from home, weary traveller. Darkness fills the woods around you, and a tangible evil hangs thick in the air. You're lost, aren't you?");
+    console.log("\n\n\nYou're a long way from home, weary traveller. Darkness fills the woods around you, and a tangible evil hangs thick in the air. You're lost, aren't you?");
 
     name = ask.question("\nToo bad. You've come a long way to die. Tell me, what name should we put on your tombstone?\n");
 
     console.log("\nGods save you, " + name + ". A dragon lurks in these woods, and he's hungry. Go now, find your way out... before it's too late.");
 
     action = ask.question("\nAfter walking through the eerie forest with no incident, you take a brief rest.  The woods are quiet... for now. Type 'print' to see your inventory, or 'w' to continue your journey.\n");
-
 }
 
 //CHOICE
@@ -98,7 +97,7 @@ function choice() {
 
 function print() {
     console.log("\nAdventurer: " + name + "\nHealth: " + hp + "\nInventory: " + inventory[inventory.length - 1].name);
-    action = ask.question("\nThat's all you've got? Good luck. Type 'print' to see your inventory again, or 'w' to walk.");
+    action = ask.question("\nThat's all you've got? Good luck. Type 'print' to see your inventory again, or 'w' to walk.\n");
 }
 
 //WALK
@@ -124,8 +123,8 @@ function encounter() {
 
     beastAlive = true;
 
-    console.log("\nA " + beastEncountered.name + " bursts from the foliage ahead!\n");
-    var fightOrFlight = ask.question("Will you run like a coward? Or fight like a fool? Type 'fight' to attack or 'run' to flee like a sissy!\n");
+    console.log("\nA " + beastEncountered.name + " bursts from the foliage ahead!");
+    fightOrFlight = ask.question("\nWill you run like a coward? Or fight like a fool? Type 'fight' to attack or 'run' to flee like a sissy!\n");
 
     while (beastAlive) {
 
@@ -133,13 +132,28 @@ function encounter() {
             beastAttackPower = Math.floor(Math.random() * (beastEncountered.attackPower[1] - beastEncountered.attackPower[0] + 1) + beastEncountered.attackPower[0]),
             yourAttackPower = Math.floor(Math.random() * (weaponEquipped.attackPower[1] - weaponEquipped.attackPower[0] + 1) + weaponEquipped.attackPower[0]);
 
-        if (fightOrFlight === "fight") {
 
-            console.log("\nYou slash at the " + beastEncountered.name + " with your " + weaponEquipped.name + " do " + yourAttackPower + " damage!\n");
+
+        if (fightOrFlight === "fight") {
 
             thisBeastHealthPower = thisBeastHealthPower - yourAttackPower;
 
-            console.log(thisBeastHealthPower);
+            var beastStatus = thisBeastHealthPower / beastEncountered.healthPower,
+                beastStatusMessage;
+
+            if (beastStatus < .15) {
+                beastStatusMessage = "Its intestines are trailing across the floor!";
+            } else if (beastStatus < .30) {
+                beastStatusMessage = "It's desperate! You've almost done it!";
+            } else if (beastStatus < .60) {
+                beastStatusMessage = "Gods! Look at all the blood!";
+            } else if (beastStatus < .80) {
+                beastStatusMessage = "Wow. You've managed to actually draw blood.";
+            } else {
+                beastStatusMessage = "Oh come on. You've hardly scratched it!";
+            }
+
+            console.log("\nYou slash at the " + beastEncountered.name + " with your " + weaponEquipped.name + " do " + yourAttackPower + " damage! " + beastStatusMessage);
 
             if (thisBeastHealthPower < 1) {
 
@@ -149,15 +163,12 @@ function encounter() {
                 if (hp < 1) {
                     return;
                 } else {
-                    fightOrFlight = ask.question("\nIt's still alive, and you only have " + hp + " health left! Hurry, what now? Type 'fight' to attack again or 'run' to escape like a coward!");
+                    fightOrFlight = ask.question("\nIt's still alive, and you only have " + hp + " health left! Hurry, what now? Type 'fight' to attack again or 'run' to escape like a coward!\n");
                     continue;
                 }
             }
         } else if (fightOrFlight === "run") {
             flee(beastEncountered, beastAttackPower);
-        } else if (fightOrFlight === "print") {
-            print();
-            return;
         } else {
             wrongButton(beastEncountered);
         }
@@ -175,12 +186,12 @@ function flee(beastEncountered, beastAttackPower) {
     //IF FLEE FAILS
     else {
 
-        console.log("\nIt's too fast! You couldn't escape!\n");
+        console.log("\nIt's too fast! You couldn't escape!");
         beastAttack(beastEncountered, beastAttackPower);
         if (hp < 1) {
             return;
         } else {
-            fightOrFlight = ask.question("\nDon't just stand there! Keep running or turn and fight! Type 'run' to keep running or 'fight' to attack.\n");
+            fightOrFlight = ask.question("\nDon't just stand there! You only have " + hp + " health left! Keep running or turn and fight! Type 'run' to keep running or 'fight' to attack.\n");
             //        return;
         }
     }
@@ -196,7 +207,9 @@ function wrongButton(beastEncountered) {
     if ((deathToggle) && (fightOrFlight !== "run") && (fightOrFlight !== "fight")) {
         gameRunning = false;
         action = "dead";
-        console.log("\nFrozen with fear, you're defenseless as the " + beastEncountered.name + " rips into your chest and devours your insides. Screaming in agony, your final moments of torture are steeped in a single clear thought: You died a little chicken.");
+        beastAlive = false;
+        hp = 0;
+        console.log("\nFrozen with fear, you're defenseless as the " + beastEncountered.name + " rips into your chest and devours your insides. Screaming in agony, your final moments of torture are steeped in a single clear thought: You died a little chicken.\n\n\n");
         return;
     }
     return;
@@ -206,14 +219,14 @@ function wrongButton(beastEncountered) {
 
 function beastAttack(beastEncountered, beastAttackPower) {
 
-    console.log("The " + beastEncountered.name + " swipes its deadly claws and hits you for " + beastAttackPower + "!");
+    console.log("\nThe " + beastEncountered.name + " swipes its deadly claws and hits you for " + beastAttackPower + "!");
     hp = hp - beastAttackPower;
     if (hp < 1) {
         gameRunning = false;
         action = "dead";
         beastAlive = false;
 
-        console.log("\nThe " + beastEncountered.name + " knocks your weapon from your hands, and with a chilling roar, rips into your chest and devours your insides. Screaming in agony, your final moments of torture are steeped in a single clear thought: You shouldn't have taken the shortcut today. At least you died a brave soul. Stupid. But brave.\n");
+        console.log("\nThe " + beastEncountered.name + " knocks your weapon from your hands, and with a chilling roar, rips into your chest and devours your insides. Screaming in agony, your final moments of torture are steeped in a single clear thought: You shouldn't have taken the shortcut today. At least you died a brave soul. Stupid. But brave.\n\n\n");
         return;
     }
     return;
@@ -226,7 +239,8 @@ function victory(beastEncountered, weaponEquipped) {
     if (beastEncountered.name === "Dragon") {
         gameRunning = false;
         action = "win";
-        console.log("The Dragon roars in pain as you pierce its massive heart with your blade, then it falls to the mossy floor, lifeless. \nWell I'll be. Somehow you've managed to not be completely useless. The dragon is dead, and in his torn throat you find a fire crystal. You'll be rich. Filthy rich! And now you have the light to find your way. Well done, weary traveller. You can finally go home.\n");
+        beastAlive = false;
+        console.log("\nThe Dragon roars in pain as you pierce its massive heart with your blade, then it falls to the mossy floor, lifeless. \nWell I'll be. Somehow you've managed to not be completely useless. The dragon is dead, and in his torn throat you find a fire crystal. You'll be rich. Filthy rich! And now you have the light to find your way. Well done, weary traveller. You can finally go home.\n\n\n");
         return;
     } else {
 
@@ -239,7 +253,7 @@ function victory(beastEncountered, weaponEquipped) {
             hp = hp + beastEncountered.hpSpoil;
         }
 
-        console.log("\n \nThe " + beastEncountered.name + " slips from your blade and collapses in a lifeless heap. A valiant fight, " + name + ", but you have to keep moving.");
+        console.log("\nWith a sad whimper, the " + beastEncountered.name + " slips from your blade and collapses in a lifeless heap. A valiant fight, " + name + ", but you have to keep moving.\n");
         beastAlive = false;
         action = "win";
     }
@@ -249,19 +263,28 @@ introduction();
 
 while (gameRunning) {
 
+    if ((action !== "w") && (action !== "print") && (action !== "dead") && (action !== "win")) {
+        action = ask.question("\nDon't just stand there! Didn't you hear me about the DRAGON?\n");
+    }
+
     while (action === "w") {
 
         walk();
+    }
+
+    if ((action !== "w") && (action !== "print") && (action !== "dead") && (action !== "win")) {
+        action = ask.question("\nDon't just stand there! Didn't you hear me about the DRAGON?\n");
     }
 
     while (action === "print") {
 
         print();
     }
-    while ((action !== "w") && (action !== "print") && (action !== "dead") && (action !== "win")) {
-        console.log("\nDon't just stand there! Didn't you hear me about the DRAGON?");
-        break;
+
+    if ((action !== "w") && (action !== "print") && (action !== "dead") && (action !== "win")) {
+        action = ask.question("\nDon't just stand there! Didn't you hear me about the DRAGON?\n");
     }
+
 
     if (gameRunning) {
         choice();

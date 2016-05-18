@@ -3,17 +3,12 @@
     src: url("SuperMario256.ttf");
 }
 
-html {
-   
-}
-
 body {
-     background-image: url(stage_classicmario.png);
-    background-position:bottom;
+    background-image: url(super_mario_game-wallpaper-1366x768.jpg);
+    background-position: bottom;
     background-attachment: fixed;
-    background-repeat:no-repeat;
-    background-size:cover;
-
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 h1 {
@@ -25,7 +20,8 @@ h1 {
 
 h2 {
     font-family: "SuperMario";
-    color: #f7ff00;
+    color: #0dd6ff;
+    ;
     text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 3px 3px 0 #000;
     text-align: center;
     margin: .5em;
@@ -33,7 +29,7 @@ h2 {
 
 h3 {
     font-family: "SuperMario";
-    color: #ff0b00;
+    color: #f7ff00;
     text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
     margin: auto;
     width: 100%;
@@ -67,56 +63,29 @@ h4 {
     color: #f7ff00;
 }
 
-.bigList {
-    text-align: center;
-    margin: auto;
-    width: 90%;
-}
-
-li {
+.formClass {
     font-family: "SuperMario";
     font-size: 1.5em;
-    color: #f7ff00;
+    color: #ff2200;
     text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
     list-style: none;
     padding: none;
-    text-align: left;
+    text-align: center;
     font-weight: bolder;
-    margin: none;
+    margin: auto;
+    width: 75%
 }
 
 img {
     height: 250px;
     width: 250px;
-    margin: 2em;
-}
-
-.goomba {
-    display: inline-block;
-    height: 100%;
-    width: 33%;
-}
-
-.bombOmb {
-    display: inline-block;
-    height: 100%;
-    width: 33%;
-}
-
-.cheepCheep {
-    height: 100%;
-    display: inline-block;
-    width: 33%;
-}
-
-.monster {
-    margin-left: 2.5em;
-    margin-right: 2.5em;
 }
 
 #costBro {
     margin: auto;
-    width: 90%;
+    margin-top: 1em;
+    bottom: 0;
+    width: 100%;
     text-align: center;
     font-family: "SuperMario";
     font-size: 3em;
@@ -127,30 +96,9 @@ img {
 input {
     width: 100%;
     display: inline-block;
-    color: #ff1400;
+    color: #0dd6ff;
     margin-bottom: 1em;
-}
-
-ul {
-    padding: 0;
-}
-
-.btn {
-    width: 100%;
-    background-color: #ff1400;
-    font-family: "SuperMario";
-    border: .5em black solid;
-}
-
-#totalButton {
-    margin: auto;
-    text-align: center;
-    
-}
-
-.pButton {
-    width: 50%;
-    margin: auto;
+    background-color: gray;
 }
 
 .footer {
@@ -179,7 +127,24 @@ ul {
     margin-bottom: 2em;
 }
 
-#leftPipe {
-    display: block;
+div {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 85%;
+}
+
+.entireForm {
+    background-color: #0dd6ff;
+    border: solid 10px white;
+    border-radius: 1000px;
+    text-align: center;
+    padding: 1em;
+}
+
+#pipe {
     margin: auto;
+    max-height: 100px;
+    max-width: 100px;
 }
