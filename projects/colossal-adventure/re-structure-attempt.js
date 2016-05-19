@@ -139,8 +139,6 @@ function encounter() {
 
             thisBeastHealthPower = thisBeastHealthPower - yourAttackPower;
 
-            console.log(thisBeastHealthPower);
-
             if (thisBeastHealthPower < 1) {
 
                 victory(beastEncountered, weaponEquipped);
