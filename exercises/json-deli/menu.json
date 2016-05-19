@@ -1,0 +1,61 @@
+{
+    "menu": {
+        "appetizers": [
+            {
+                "name": "Strings",
+                "ingredients": ["lettuce", "dressing"],
+                "description": "A delicious blend of rabbit food soaked in unhealthy sauce."
+            },
+            {
+                "name": "Macro-Chips",
+                "ingredients": ["chips", "cheese"],
+                "description": "A pile of tortilla chips with melted cheese. Duh."
+            }
+        ],
+        "coldSandwiches": [
+            {
+                "name": "Turkey-Byte",
+                "ingredients": ["turkey", "bread"],
+                "description": "A slab of turkey between two slices of bread. Delicious."
+            },
+            {
+                "name": "Parse-trami",
+                "ingredients": ["pastrami", "bread"],
+                "description": "A slab of pastrami between two slices of bread. Salivating."
+            }
+        ],
+        "hotSandwiches": [
+            {
+                "name": "BTML",
+                "ingredients": ["Bacon", "Other crap that's not bacon"],
+                "description": "Bacon. B-A-C-O-N."
+            }, {
+                "name": "CS-YES",
+                "ingredients": ["Fried Chicken", "Avacado"],
+                "description": "A friggin' fried chicken sandwhich."
+            }
+        ],
+        "desserts": [
+            {
+                "name": "Cookies",
+                "ingredients": ["Cookie dough", "Chocolate Chips"],
+                "description": "Got milk?"
+            }, {
+                "name": "DOM NOM NOM",
+                "ingredients": ["You don't want to know", "You still don't want to know."],
+                "description": "All that is holy."
+            }
+            ],
+        "drinks": [
+            {
+                "name": "pop();",
+                "ingredients": ["Sugar", "Water"],
+                "description": "Dr. Pepper."
+            }, {
+                "name": "Boozelean",
+                "ingredients": ["Alcohol", "Crushed dreams"],
+                "description": "Welcome to tomorrow. Literally. You won't remember tonight."
+            }
+            ]
+    }
+}

@@ -1,0 +1,14 @@
+body {
+    background-image: url(dj-services.jpg);
+    background-size: cover;
+}
+
+#box {
+    border: solid black 2px;
+    display: block;
+    margin:auto;
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    margin-top: 10em;
+}
