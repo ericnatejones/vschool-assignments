@@ -12,11 +12,13 @@ var dis = ["Welcome to Noobville, losers.", "You are the reason they put instruc
 
 
 submit.onclick = function () {
-    if ((game.value === "") || (player.value === "") || (score.value === "")) {
-        window.alert("Please enter all fields.");
-    } else if (score.value < 1) {
-        window.alert("Can you say noob? That score isn't even worth posting.");
-    } else {
+
+    console.log(game.value);
+    console.log(score.value);
+    console.log(player.value);
+
+    if ((game.value) && (player.value) && (score.value)) {
+        event.preventDefault();
         if (toggle) {
 
             table.deleteRow(0);
@@ -48,7 +50,12 @@ submit.onclick = function () {
             trashCell.appendChild(trashText);
 
         }
-
-        form.reset();
+        if (score.value < 1) {
+            window.alert("Can you say noob? That score isn't even worth posting.");
+        }
+        document.getElementById("form").reset();
+        player.focus();
     }
+
+
 };

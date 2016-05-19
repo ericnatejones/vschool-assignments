@@ -49,12 +49,16 @@ div {
 
 #submit {
     padding: 1em;
+    font-size: 1em;
     font-weight: bold;
     border-radius: 50px;
     background-color: rgba(76, 128, 142, .5);
     font-family: 'Press Start 2P';
     border: none;
     transition: .5s;
+    display: block;
+    margin: auto;
+    width: 300px;
 }
 
 #submit:hover {

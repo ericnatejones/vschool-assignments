@@ -4,26 +4,14 @@ var button = $("#add"),
 
 input.focus();
 
-function addGrocery() {
+$(document).on("click", "#add", function (event) {
 
-    if (input.val() !== "") {
-        list.append('<li class="grocery"><input type="button" class="deleteButton" value="X"/>   ' + input.val() + '  </li>');
-
-        $("#input").val("");
-
-    } else {
-        window.alert("Mom. Don't be a noob.");
+    var string = input.val();
+    if (string) {
+        event.preventDefault();
+        list.append('<li class="grocery"><input type="button" class="deleteButton" value="X"/>   ' + string + '  </li>');
     }
-    input.focus();
-}
-
-$(document).on("click", "#add", addGrocery);
-
-input.keyup(function () {
-
-    if (event.keyCode === 13) {
-        addGrocery();
-    }
+    document.getElementById("form").reset();
 });
 
 $(document).on("click", ".deleteButton", function () {

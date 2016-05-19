@@ -1,5 +1,9 @@
 html {
     background-image: url(Groceries-04-19-14-2-1280.jpg);
+    background-position: top;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 body {
@@ -36,7 +40,7 @@ h1 {
     color: #f0ebe7;
     font-weight: bold;
     font-size: 1.5em;
-/*    white-space: nowrap;*/
+    /*    white-space: nowrap;*/
     text-overflow: ellipsis;
     overflow: hidden;
 }
