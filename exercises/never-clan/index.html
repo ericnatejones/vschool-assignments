@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="neverClan">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Never Clan</title>
+    <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body ng-controller="mainController">
+    <div class="main">
+        <h1>Kill Count: {{killCount}} </h1>
+        <div ng-repeat="pwns in player.kills">
+
+            <h1>DECEASED: {{ pwns.handle }}</h1>
+            <h2>Rank: {{ pwns.rank }}</h2>
+            <h3>Clan Members:</h3>
+            <h4><span ng-repeat="clanMembers in pwns.clan">   -  {{ clanMembers }}   -  </span>
+            </h4>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

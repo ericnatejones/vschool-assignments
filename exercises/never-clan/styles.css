@@ -1,0 +1,25 @@
+body {
+    background-image: url(current-fantasy-sub-genre-fads-22-vampires-zombies-angels-undead-oh-my22-castlevania-2-lords-of-shadow-video-game.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Audiowide', cursive;
+    letter-spacing: .2em
+}
+
+.main {
+    background-color: rgba(0, 0, 0, .90);
+    width: 50%;
+    margin: auto;
+    color: white;
+    padding: 100px;
+    text-align: center;
+    margin-top: 1em;
+    border-radius: 800px;
+    border: none;
+    box-shadow: 1px 1px 100px gray;
+/*    display: none;*/
+}
+
+span {
+    display: inline;
+}

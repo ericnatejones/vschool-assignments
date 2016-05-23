@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="learningAngular">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Practice</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body ng-controller="MainController">
+
+    <label for="">Type your name: </label>
+    <input type="text" ng-model="person.name">
+    <br>
+
+    <h1>{{ person.name }}</h1>
+
+    <h1>Today's nursing home birthdays: </h1>
+    <div ng-repeat="person in people">
+
+        <h3>{{ person.name }}</h3>
+        <p>They're only {{ person.age }} years old!</p>
+
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -45,17 +45,18 @@
                 "ingredients": ["You don't want to know", "You still don't want to know."],
                 "description": "All that is holy."
             }
-            ],
+        ],
         "drinks": [
             {
                 "name": "pop();",
                 "ingredients": ["Sugar", "Water"],
                 "description": "Dr. Pepper."
-            }, {
+            },
+            {
                 "name": "Boozelean",
                 "ingredients": ["Alcohol", "Crushed dreams"],
                 "description": "Welcome to tomorrow. Literally. You won't remember tonight."
             }
-            ]
+        ]
     }
 }

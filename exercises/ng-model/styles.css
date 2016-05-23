@@ -1,0 +1,35 @@
+body {
+    width: 75%;
+    margin: auto;
+}
+
+.well {
+
+    text-align: center;
+    height: 300px;
+
+}
+
+input {
+    margin: auto;
+    width: 50%;
+}
+
+label {
+    margin: auto;
+    width: 50%;
+}
+
+.container-fluid {
+    margin-top: 5em;
+}
+
+label {
+    padding: 2em;
+    margin: 1em;
+}
+
+input {
+    padding: 1em;
+    margin-bottom: 2em;
+}

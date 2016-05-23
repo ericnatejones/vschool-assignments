@@ -1,0 +1,516 @@
+@font-face {
+    font-family: BebasLight;
+    src: url("BebasNeue Light.otf");
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: Avenir, Helvetica Neue, Helvetica, Arial, sans-serif;
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 10px;
+    background-color: white;
+    width: 170px;
+    box-shadow: 1px 1px 1px gray;
+}
+
+liSpan {
+    width: 100%;
+    height: auto;
+}
+
+.dropdownList {
+    text-align: center;
+    border-top: 1px solid #eee;
+    margin-right: 0px;
+    padding: 15px;
+    width: 100%;
+    height: auto;
+    line-height: 24px;
+    display: block;
+}
+
+.dropdownList:hover {
+    text-decoration: none;
+    background-color: rgb(243, 195, 172);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.contain {
+    margin: auto;
+    padding: 0 15px;
+}
+
+main {
+    margin-bottom: 50px;
+}
+
+h1 {
+    line-height: 20px;
+    text-align: center;
+    font-size: 18px;
+    color: #999999;
+    font-weight: 300;
+    margin-top: 75px;
+}
+
+h2 {
+    font-family: "Bebas Neue", sans-serif;
+    line-height: 32px;
+    letter-spacing: .2em;
+    font-weight: 400;
+    font-size: 36px;
+    text-align: center;
+    font-style: normal;
+    color: black;
+}
+
+h2:hover {
+    color: rgb(243, 195, 172);
+    cursor: pointer;
+}
+
+h3 {
+    font-weight: 200;
+    font-style: italic;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    color: #999;
+    padding-bottom: 15px;
+}
+
+h3:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+h4 {
+    font-family: BebasLight;
+    color: black;
+    font-size: 24px;
+    letter-spacing: .1em;
+    text-align: center;
+    line-height: 20px;
+    margin: -11px auto 0px;
+    background-color: white;
+    width: 90px
+}
+
+.postText {
+    font-weight: 400;
+    color: #545454;
+    line-height: 20px;
+    font-size: 14px;
+    padding: 10px 0px;
+}
+
+h1:before,
+h1:after {
+    content: "   ";
+    display: inline-block;
+    max-width: 80px;
+    width: 15%;
+    border-bottom: 1px solid #ddd;
+    line-height: 18px;
+    vertical-align: middle;
+}
+
+input {
+    width: 100%;
+}
+
+.box {
+    margin: auto;
+    width: 970px;
+    height: auto;
+}
+
+form {
+    /*    max-width: 300px;*/
+    margin: auto;
+    vertical-align: middle;
+    position: relative;
+}
+
+form .glyphicon {
+    position: absolute;
+    padding: 5px;
+    pointer-events: none;
+    right: 0px;
+    margin-right: 5px;
+    margin-top: 5px;
+    z-index: 2;
+    color: #999999;
+}
+
+.envi .glyphicon {
+    margin-top: 21px;
+    margin-right: 15px;
+}
+
+header {
+    width: 100%;
+    height: 72px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    box-sizing: border-box;
+    z-index: 9999999;
+    border-bottom: 1px #e0e0e0 solid;
+}
+
+.envi {
+    padding-top: 5px;
+    z-index: 0;
+    position: relative;
+}
+
+.headerRow {
+    position: relative;
+    z-index: 9999999;
+    background-color: white;
+}
+
+.nav {
+    text-align: center;
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: inline;
+    width: 100%;
+}
+
+li {
+    display: inline;
+    font-family: Avenir, Helvetica Neue, Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 72px;
+    margin-right: 60px;
+    display: inline-block;
+}
+
+li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.headerLogo {
+    margin-top: 16px;
+    margin-left: 10px;
+    height: 40px;
+    width: 184px;
+    padding: 0;
+}
+
+.headerLogo:hover {
+    cursor: pointer;
+}
+
+
+}
+.searchDiv {
+    position: relative;
+}
+#searchBox,
+#emailSubscribe {
+    font-family: Avenir, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-style: italic;
+    margin-top: 13px;
+    margin-right: 10px;
+    height: 33px;
+    display: block;
+    padding-left: 10px;
+    padding-right: 35px;
+}
+#emailSubscribe {
+    margin-bottom: 20px;
+    z-index: 1;
+    position: relative;
+}
+#subscribeBox {
+    height: 70px;
+    background-color: #fee5da;
+    z-index: -2;
+}
+
+.slideImage {
+    width: 100%;
+    margin-top: 60px;
+    transition: opacity 1s ease-in-out;
+}
+#banner {
+    height: auto;
+    overflow: hidden;
+    z-index: -1;
+    margin-top: -10px;
+}
+.mainCol {
+    padding: 0 15px;
+}
+instaDiv {
+    width: 100%;
+    height: 100px;
+    box-sizing: border-box;
+    padding: 0;
+}
+.logoDiv {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.instaPhotos {
+    padding: 0;
+    box-sizing: border-box;
+    display: inline;
+    width: 100%;
+    float: left;
+}
+.instaPhotos:hover {
+    cursor: pointer;
+}
+.postImage {
+    width: 100%;
+}
+.postImage:hover {
+    opacity: .8;
+}
+.postImage:hover .dropdown-content {
+    display: block;
+}
+.postReadMore {
+    width: 100px;
+    height: 40px;
+    border: 1px #ccc solid;
+    background-color: white;
+    color: #ccc;
+    font-family: "BebasLight";
+    font-size: 17px;
+    padding: 8px;
+    letter-spacing: .1em;
+    font-weight: 200;
+    text-align: center;
+    margin: auto;
+    display: block;
+    transition: .2s;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+.postReadMore:hover {
+    background-color: #9b9b9b;
+    color: white;
+}
+.postComments {
+    float: right;
+    color: #333;
+    font-size: 13px;
+}
+.commentNumber {
+    font-size: 13px;
+    font-style: italic;
+    color: black;
+}
+.commentNumber:hover,
+.next:hover {
+    text-decoration: underline;
+    color: rgb(243, 195, 172);
+    cursor: pointer;
+}
+.postMediaLinks {
+    color: #f3c3ac;
+    font-size: 30px;
+    margin-right: 30px;
+}
+.postMediaLinks:hover {
+    color: #f3c3ac;
+    text-decoration: none;
+    cursor: pointer;
+}
+.relatedDiv {
+    border-top: 1px #c1c1c1 solid;
+    border-bottom: 1px #c1c1c1 solid;
+    margin: 3em 0;
+    text-align: center;
+}
+.relImgDiv {
+    height: auto;
+    width: 45%;
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+    margin: auto;
+}
+.relatedPictures {
+    width: auto;
+    max-height: 120px;
+    max-width: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.relatedPictures:hover {
+    cursor: pointer;
+}
+.favorites {
+    width: 100%;
+}
+.favorites:hover {
+    cursor: pointer;
+}
+footer {
+    margin-top: 100px;
+    background-color: black;
+    color: #bbb;
+    font-size: 11px;
+}
+.rightFoot {
+    text-align: right;
+}
+#p1,
+#p2 {
+    margin: 0 0 0;
+    padding: 10px;
+    background: black;
+}
+.verisage {
+    color: #ddd;
+    text-decoration: underline;
+    font-style: italic;
+}
+.asides {
+    border: 1px solid #e0e0e0;
+    margin-bottom: 55px;
+}
+#aside {
+    margin-top: 100px;
+}
+#asideSubscribe {
+    font-style: italic;
+    border: none;
+    margin: 5px 0 5px 5px;
+    width: 90%;
+}
+.faveHead {
+    font-family: BebasLight;
+    letter-spacing: .1em;
+    text-align: center;
+    font-size: 21px;
+    margin-top: -15px;
+}
+.headerTitles {
+    background-color: white;
+}
+.wishlistImg {
+    width: 75%;
+    margin: auto;
+}
+.wishlistImg:hover {
+    cursor: pointer;
+}
+.listImg {
+    width: 75%;
+}
+.listCaro {
+    padding-top: 20px;
+}
+.asideSubscribeImg {
+    text-align: center;
+    margin: 5px;
+    width: 25px;
+    height: 25px;
+    transition: .2s;
+}
+.asideSubscribeImg:hover {
+    opacity: .5;
+    cursor: pointer;
+}
+.next {
+    text-align: right;
+    font-style: italic;
+}
+.kjInsta {
+    text-align: center;
+    font-size: 21px;
+    letter-spacing: .1em;
+    font-family: BebasLight;
+    font-weight: bold;
+    margin: 18px auto;
+}
+@media screen and (min-width: 481px) {
+    .instaPhotos {
+        box-sizing: border-box;
+        width: 25%;
+    }
+}
+@media screen and (min-width: 627px) {
+    .relImgDiv {
+        height: auto;
+        width: 24.5%;
+        display: inline-block;
+        padding: 10px;
+        text-align: center;
+        margin: auto;
+    }
+}
+@media screen and (min-width: 641px) {
+    .instaPhotos {
+        box-sizing: border-box;
+        width: 10%;
+    }
+}
+@media screen and (min-width: 768px) {
+    .contain {
+        width: 750px;
+    }
+    
+    .favorites {
+        max-width: 211px;
+    }
+    
+    .relImgDiv {
+        height: auto;
+        width: 45%;
+        display: inline-block;
+        padding: 10px;
+        text-align: center;
+        margin: auto;
+    }
+}
+@media screen and (min-width: 992px) {
+    .contain {
+        box-sizing: border-box;
+        width: 10%;
+        width: 970px;
+    }
+    
+    .mainCol {
+        width: 66.66%;
+    }
+    
+    .relImgDiv {
+        height: auto;
+        width: 24.5%;
+        display: inline-block;
+        padding: 10px;
+        text-align: center;
+        margin: auto;
+    }
+}
