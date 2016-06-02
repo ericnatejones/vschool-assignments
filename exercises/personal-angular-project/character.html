@@ -1,0 +1,24 @@
+<div class="backgroundDiv" style="background-image: url(http://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{ character.key }}_0.jpg)">
+    <div class="windowDiv">
+        <h1>{{ character.name }}</h1>
+        <h2>{{ character.title }}</h2>
+        <h4 ng-repeat="tag in character.tags track by $index"> {{ tag }} </h4>
+        <h3>Spells</h3>
+        <h4 ng-repeat="spell in character.spells track by $index">{{ spell.name }}: {{ spell.description }} <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.11.1/img/spell/{{spell.image.full }}" alt=""></h4>
+        <h3>Passive</h3>
+        <h4>{{ character.passive.name }}: {{ character.passive.description }} <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.11.1/img/passive/{{ character.passive.image.full}}" alt=""></h4>
+        <h3>Ally Tips</h3>
+        <h4 ng-repeat="tip in character.allytips track by $index">{{ tip }}</h4>
+        <h3>Lore</h3>
+        <h4>{{ character.lore }}</h4>
+        <h3>Info</h3>
+        <h4 ng-repeat="(key,value) in character.info track by $index">{{ key }}: {{ value }}</h4>
+        <h3>Stats</h3>
+        <h4>{{ character.stats.armor }}</h4>
+        <br>
+
+
+
+        <img ng-repeat="skin in character.skins" ng-src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{ character.key }}_{{ skin.num }}.jpg" alt="">
+    </div>
+</div>

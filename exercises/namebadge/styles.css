@@ -1,0 +1,90 @@
+.about {
+    /*    height: 150px;*/
+    text-align: center;
+}
+
+.aboutInput {
+    height: 100%;
+    margin: auto;
+
+}
+
+.inputRow {
+    text-align: center;
+}
+
+.smallInputs {
+    margin-bottom: 1em;
+
+}
+
+.buttonDiv {
+    text-align: center;
+}
+
+.btn {
+    width: 25%;
+    height: 50px;
+    box-shadow: 0px 1px 5px gray;
+}
+
+.container {
+
+    margin-top: 3em;
+    border-radius: 20px;
+    box-shadow: 0px 1px 50px gray;
+    padding: 2em;
+    background: lightgray;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 5em;
+    letter-spacing: .1em;
+    margin-top: -15px;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+    padding-bottom: 1em;
+}
+
+h3 {
+    text-align: center;
+    font-size: 5em;
+    padding: .5em;
+}
+
+p {
+    font-size: 2em;
+}
+
+.aboutP {
+    height: 200px;
+    padding: 1em;
+}
+
+.help-block {
+    font-size: 1em;
+    color: red;
+    text-align: center;
+}
+
+.blueBadge {
+    background-color: lightseagreen;
+}
+
+.redBadge {
+    background-color: darkred;
+}
+
+.whiteSpace {
+    background-color: white;
+    display: inline-block;
+    width: 100%;
+    border-radius: 20px;
+    z-index: 1;
+    margin-bottom: -20px;
+}

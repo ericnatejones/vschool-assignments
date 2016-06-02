@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="yodaSpeak">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Yoda Speak</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body style="background-color: black">
+
+    <div ng-controller="mainController" class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>Yoda Speak</h1>
+                <form name="yodaForm" ng-submit="submitForm(text)" novalidate>
+                    <input class="form-control" type="text" ng-model="text">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </form>
+                <h2>{{ toTranslate }}</h2>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+        <script src="app.js"></script>
+    </div>
+
+</body>
+
+</html>

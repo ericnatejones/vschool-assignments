@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="pokeProfile">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PokeProfile</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body ng-controller="mainController" class="container-fluid">
+    <div class="row">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
+            <h2>Enter Pokemon Number:</h2>
+
+            <form novalidate action="">
+                <input class="form-control" ng-model="number" type="number">
+            </form>
+
+            <button class="btn btn-primary" ng-click="findPokemon(number)">Get Pokemon</button>
+
+            <div class="pokeSection" ng-hide="!status">
+                <h1>{{ pokemon.name }}</h1>
+                <h2>Attack: {{ pokemon.attack }}</h2>
+                <h2>Ability: <span class="cap">{{ pokemon.ability }}</span></h2>
+
+                <div class="image">
+                    <img class="sprite" ng-src="http://pokeapi.co{{ pokemon.sprite }}">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+    <script src="app.js"></script>
+    <script src="service.js"></script>
+</body>
+
+</html>

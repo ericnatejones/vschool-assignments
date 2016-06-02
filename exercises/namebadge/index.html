@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="badger">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Name Badge</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body ng-controller="mainController">
+
+    <div class="container">
+        <div class="row">
+            <form name="userForm" ng-submit="submitForm(person, userForm.$valid)" novalidate>
+
+
+                <div class="col-xs-12 col-md-6 inputRow">
+                    <div class="form-group" ng-class="{ 'has-error' : userForm.first.$invalid && !userForm.first.$pristine }">
+                        <input name="first" required ng-minlength="3" class="smallInputs form-control" type="text" placeholder="First Name" ng-model="person.firstName">
+
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error' : userForm.last.$invalid && !userForm.last.$pristine }">
+                        <input name="last" required ng-minlength="3" class="smallInputs form-control" type="text" placeholder="Last Name" ng-model="person.lastName">
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+                        <input name="email" required ng-minlength="3" class="smallInputs form-control" type="email" placeholder="Email" ng-model="person.email">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 inputRow">
+                    <div class="form-group" ng-class="{ 'has-error' : userForm.birth.$invalid && !userForm.birth.$pristine }">
+                        <input name="birth" required ng-minlength="3" class="smallInputs form-control" type="text" placeholder="Place of Birth" ng-model="person.birth">
+                    </div>
+
+                    <div class="form-group" ng-class="{ 'has-error' : userForm.phone.$invalid && !userForm.phone.$pristine }">
+                        <input name="phone" required ng-maxlength="10" ng-minlength="1" class="smallInputs form-control" type="number" placeholder="Phone Number" ng-model="person.phone">
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error' : userForm.food.$invalid && !userForm.food.$pristine }">
+                        <input name="food" required ng-minlength="3" class="smallInputs form-control" type="text" placeholder="Favorite Food" ng-model="person.food">
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-group" ng-class="{ 'has-error' : userForm.about.$invalid && !userForm.about.$pristine }">
+                        <textarea rows="7" name="about" required ng-minlength="3" class="form-control aboutInput" type="text" placeholder="Tell us about yourself" ng-model="person.about"></textarea>
+                    </div>
+                </div>
+        </div>
+
+        <div class="col-xs-12 buttonDiv">
+            <button ng-disabled="userForm.$invalid" type="submit" class=" btn btn-primary">Submit</button>
+            <p ng-show="userForm.first.$error.minlength" class="help-block">First name is too short.</p>
+            <p ng-show="userForm.last.$error.minlength" class="help-block">Last name is too short.</p>
+            <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
+            <p ng-show="userForm.birth.$error.minlength" class="help-block">Place of birth is too short.</p>
+            <p ng-show="userForm.phone.$error.minlength" class="help-block">Phone number is too short.</p>
+            <p ng-show="userForm.phone.$error.maxlength" class="help-block">Phone number is too long.</p>
+            <p ng-show="userForm.food.$error.minlength" class="help-block">Favorite food is too short.</p>
+            <p ng-show="userForm.about.$error.minlength" class="help-block">About me is too short.</p>
+            </form>
+        </div>
+    </div>
+    </div>
+    <div class="container badgeDiv" ng-style="{'background-color': colors[$index % colors.length]}" ng-repeat="person in people">
+        <div class="row">
+            <h1>HELLO</h1>
+            <h2>my name is</h2>
+            <div class="whiteSpace">
+                <h3>{{person.firstName}} {{person.lastName}}</h3>
+                <div class="col-xs-12 col-md-6">
+                    <p>Place of birth: {{ person.birth }}</p>
+                    <p>Email: {{ person.email }}</p>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <p><span>Phone: </span>{{ person.phone }}</p>
+                    <p>Favorite food: {{ person.food }}</p>
+                </div>
+                <div class="col-xs-12">
+                    <p class="aboutP">About me: {{ person.about }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="toDo">
+
+<head>
+    <meta charset="UTF-8">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body ng-controller="mainController">
+
+    <div class="container">
+        <div class="row">
+            <h1>To Do List</h1>
+            <form name="form" novalidate>
+                <div class="col-sm-12 col-md-4 col-md-offset-4 form-group">
+                    <input class="form-control" placeholder="Title..." ng-model="toDo.title" type="text">
+                </div>
+                <div class="col-sm-12 col-md-4 col-md-offset-4 form-group">
+                    <input class="form-control" placeholder="Image (optional)..." ng-model="toDo.imgUrl" type="text">
+                </div>
+                <div class="col-sm-12 col-md-4 col-md-offset-4 form-group">
+                    <input class="form-control" placeholder="Description..." ng-model="toDo.description" type="text">
+                </div>
+                <div class="col-sm-12 col-md-4 col-md-offset-4 form-group">
+                    <input class="form-control" placeholder="Price..." ng-model="toDo.price" type="number">
+                </div>
+                <div class="col-sm-12 form-group">
+                    <button ng-click="addToDo(toDo)" ng-class="{hidden : edit}" class="glyphicon glyphicon-plus submit btn btn-primary">
+                        
+                    </button>
+
+                </div>
+            </form>
+            <div class="col-sm-12">
+                <button ng-class="{hidden : !edit}" ng-click="update(toDo)" class="
+glyphicon glyphicon-wrench update btn btn-primary">
+                </button>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="toDoBox">
+                <ul>
+                    <li class="col-xs-12 col-md-4" ng-repeat="toDo in toDoList track by $index">
+                        <h2 ng-class="{completed : toDo.completed}">{{ toDo.title }}</h2>
+                        <img ng-src="{{toDo.imgUrl}}" alt="">
+                        <p>{{ toDo.description }}</p>
+                        <p>{{ toDo.price | currency }}</p>
+                        <button ng-click="makeEdit(toDo, $index)" class="glyphicon glyphicon-pencil editButtons btn btn-info"></button>
+                        <button ng-click="deleteToDo(toDo, $index)" class="glyphicon glyphicon-trash editButtons btn btn-danger comlete"></button>
+                        <button ng-click="complete(toDo,$index)" class="glyphicon glyphicon-ok editButtons btn btn-primary comlete"></button>
+
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

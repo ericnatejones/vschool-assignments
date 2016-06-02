@@ -1,0 +1,80 @@
+body {
+    background-color: #3498DB;
+}
+
+h1,
+.flag,
+h2 {
+    text-align: center;
+}
+
+.flagImg {
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+
+.faveImg {
+        width: 95%;
+    margin: auto;
+    text-align: center;
+}
+
+img {
+    text-align: center;
+    margin: auto;
+    width: 100%;
+}
+
+.nav {
+    text-align: center;
+    font-size: 2em;
+    padding: 2em;
+    background-color: #2C3E50;
+    height: auto;
+    position: relative;
+}
+
+a {
+    white-space: nowrap;
+    color: #ECF0F1;
+}
+
+a:hover,
+a:focus {
+    color: #E74C3C;
+    text-decoration: none;
+}
+
+p {
+    max-width: 75%;
+    margin: auto;
+    text-align: justify;
+    padding-top: 2em;
+    padding-bottom: 4em;
+}
+
+.view {
+    /*    width: 90%;*/
+/*    margin: auto;*/
+    padding: .5em;
+    padding-bottom: 4em;
+    margin-bottom: 3em;
+    background-color: #ECF0F1;
+    border-radius: 200px;
+}
+
+.top {
+    border-top-left-radius: 200px;
+    border-top-right-radius: 200px;
+}
+
+.bot {
+    border-bottom-left-radius: 200px;
+    border-bottom-right-radius: 200px;
+}
+
+h1, h2 {
+    padding: 1.5em;
+}

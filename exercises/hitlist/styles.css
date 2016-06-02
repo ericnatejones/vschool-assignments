@@ -1,0 +1,75 @@
+body {
+    position: relative;
+    box-sizing: border-box;
+    background-image: url(extra_clean_paper_@2X.png);
+}
+
+.hitPic {
+    height: 100%;
+    margin-left: -100px;
+}
+
+.headImg {
+    height: 100%;
+    width: auto;
+    z-index: 200;
+    margin-top: -8px;
+}
+
+.hit {
+    height: 350px;
+    text-align: center;
+    margin: auto;
+    position: relative;
+    padding: 2em;
+}
+
+.hitImg {
+    height: 100%;
+    width: 250px;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+    text-align: center;
+}
+
+h2 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 100, .75);
+    color: white;
+    margin: 0;
+    font-weight: 100;
+    font-size: 1.5em;
+    padding: .5em;
+}
+
+.row {
+    margin: auto;
+    text-align: center;
+    width: 100%;
+}
+
+header {
+    background-color: black;
+    color: red;
+    height: 65px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.container {
+    margin: auto;
+    margin-top: 8em;
+}
+
+h1 {
+    margin: 0;
+    padding: 1em;
+    font-size: 1.5em;
+    font-weight: 100;
+    display: inline-block;
+}

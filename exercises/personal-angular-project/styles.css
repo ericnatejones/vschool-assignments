@@ -1,0 +1,101 @@
+html {
+    background-color: black;
+    box-sizing: border-box;
+    font-family: "Bebas Neue";
+    font-size: 1.5em;
+}
+
+.backgroundDiv {
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: top;
+    text-align: center;
+    margin-top: 2.5em;
+    padding-top: 2em;
+    margin-left: -10px;
+    width: 101%;
+}
+
+.windowDiv {
+    width: 90%;
+    margin: auto;
+    padding: 2em;
+    padding: 2em;
+    background-color: rgba(255, 255, 255, .5);
+    color: black;
+    border-radius: 100px;
+}
+
+.nav {
+    background-color: black;
+    color: white;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
+.home {
+    margin-top: 5em;
+    text-align: center;
+}
+
+h1 {
+    font-size: 4em;
+    letter-spacing: .5em;
+    padding-left: .5em;
+    margin: 0;
+}
+
+h2 {
+    margin: 0;
+    margin-bottom: .5em;
+}
+
+h4 {
+    display: inline;
+}
+
+a,
+a:hover,
+a:focus {
+    color: white;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+}
+
+.charImage:hover {
+    background-color: rgba(255, 255, 255, .5);
+    color: black;
+    font-size: 1em;
+    text-align: center;
+
+}
+
+.aSpan {
+
+    line-height: 120px;
+}
+
+.charImage {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    color: transparent;
+    font-size: 1em;
+
+}
+
+.thumbnail {
+    width: 120px;
+    height: 120px;
+    display: inline-block;
+}

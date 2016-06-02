@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="cartoonApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>More Services</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body ng-controller="MainController">
+
+    <div class="container">
+        <div class="row">
+            <h1>Greatest Cartoons Ever</h1>
+            <form novalidate ng-submit="addCartoon(cartoon)">
+                <div class="col-xs-12 col-md-6 col-lg-4">
+                    <input placeholder="Title..." class="form-control" ng-model="cartoon.title" type="text">
+                </div>
+                <div class="col-xs-12 col-md-6 col-lg-4">
+                    <input placeholder="Description..." class="form-control" ng-model="cartoon.description" type="text">
+                </div>
+                <div class="col-xs-12 col-md-6 col-lg-4">
+                    <input placeholder="Image Url.." class="form-control" ng-model="cartoon.url" type="text">
+                </div>
+                <div class="button">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <div ng-repeat="cartoon in cartoons track by $index" class="col-xs-12 col-md-6 col-lg-4">
+                <h2>{{ cartoon.title }}</h2>
+                <p>{{ cartoon.description }}</p>
+                <div class="imgBox">
+                    <img ng-src="{{ cartoon.url }}">
+                </div>
+                <br>
+                <button ng-click="deleteCartoon($index)" class="btn btn-danger glyphicon glyphicon-trash"></button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+    <script src="app.js"></script>
+    <script src="services.js"></script>
+
+</body>
+
+</html>

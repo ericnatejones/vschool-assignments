@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="setupApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Project Setup Refresher</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="container">
+   <h1>The Angular Calculator</h1>
+   <h2>That only adds and multiplies</h2>
+    <div class="row">
+        <div class="col-xs-12 col-md-4 col-md-offset-4" ng-controller="controllerOne">
+            <form novalidate  action="">
+                <input class="form-control" ng-model="input.one" type="number">
+                <input class="form-control" ng-model="input.two" type="number">
+                <label>{{ input.total }}</label>
+
+            </form>
+            <button class="btn btn-primary" ng-click="addFunction(input.one, input.two)">Add</button>
+
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-offset-4" ng-controller="controllerTwo">
+            <form novalidate action="">
+                <input class="form-control" ng-model="input.one" type="number">
+                <input class="form-control" ng-model="input.two" type="number">
+                <label>{{ input.total }}</label>
+
+            </form>
+            <button class="btn btn-primary" ng-click="multiplyFunction(input.one, input.two)">Multiply</button>
+
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

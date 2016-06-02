@@ -1,0 +1,52 @@
+body {
+    background-image: url(273289.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: left bottom;
+    text-align: center;
+}
+
+.cap {
+    text-transform: capitalize;
+}
+
+h2,
+h1 {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+h1 {
+    font-size: 3em;
+    color: white;
+    text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+}
+
+form {
+    text-align: center;
+}
+
+.btn {
+    width: 100%;
+}
+
+.image {
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    background-color: white;
+    padding: 2em;
+    margin-top: 2em;
+    text-align: center;
+}
+
+.sprite {
+width: 125%;
+    margin-left: -17px;
+    margin-top: -17px;
+}
+
+.form-control {
+    margin-bottom: 2em;
+}

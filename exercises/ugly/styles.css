@@ -1,0 +1,56 @@
+.buttonDiv {
+    text-align: center;
+}
+
+form {
+    width: 75%;
+    margin: auto;
+    padding: 2em;
+    margin-top: 2em;
+    border-radius: 500px;
+}
+
+.subBox {
+    text-align: center;
+    padding: 1em;
+    padding-top: 0;
+    height: 625px;
+    overflow: auto;
+}
+
+.imgBox {
+    text-align: center;
+    height: 300px;
+    margin: auto;
+}
+
+h2,
+p {
+    text-align: center;
+}
+
+img {
+    max-width: 400px;
+    max-height: 300px;
+    margin: auto;
+    vertical-align: middle;
+}
+
+h1 {
+    text-align: center;
+}
+
+.commentDelete {
+    font-size: .75em;
+    float: left;
+    border-radius: 500px;
+    margin-right: 50px;
+}
+
+btn {
+   display: inline-block;
+}
+
+input {
+    margin-bottom: 1em;
+}

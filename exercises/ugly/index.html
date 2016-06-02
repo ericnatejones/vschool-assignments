@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="uglyThings">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ugly</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body ng-controller="mainController">
+    <h1>The Ugly</h1>
+    <div class="container-fluid">
+        <div class="row">
+            <form ng-submit="addUgly(submission)" novalidate>
+                <div class="col-sm-12 col-md-4 form-group">
+                    <input class="form-control" placeholder="Title" ng-model="submission.titleField" type="text">
+                </div>
+                <div class="col-sm-12 col-md-4 form-group">
+                    <input class="form-control" placeholder="URL" ng-model="submission.urlField" type="url">
+                </div>
+                <div class="col-sm-12 col-md-4 form-group">
+                    <input class="form-control" placeholder="Description" ng-model="submission.descriptionField" type="text">
+                </div>
+                <div class="buttonDiv">
+                    <button type="submit" class="btn btn-primary">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <div ng-repeat="submission in uglyThings track by $index" class="col-xs-12 col-md-4 subBox">
+                <h2>{{ submission.titleField }}</h2>
+                <div class="imgBox">
+                    <img class="img-responsive" ng-src="{{submission.urlField }}" alt="">
+                </div>
+                <p>{{ submission.descriptionField }}</p>
+                <input ng-model="comment" type="text" class="form-control comment">
+                <button ng-click="addComment(comment, $index)" class="btn btn-info comlete">Comment</button>
+                <button ng-click="deleteSub($index)" class="btn btn-danger comlete">Delete</button>
+                <p ng-repeat="entry in submission.comments track by $index">{{ entry }}<button class="btn btn-danger commentDelete" ng-click="deleteComment($index, $parent.$index)">X</button></p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="app.js"></script>
+    </head>
+</body>
+
+</html>

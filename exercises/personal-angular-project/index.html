@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="theLeague">
+
+<head>
+    <meta charset="UTF-8">
+    <title>League of Legends</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="nav row">
+            <nav>
+                <a class="col-xs-12 col-md-4" href="#/">Home</a>
+            </nav>
+        </div>
+        <div class="row">
+            <div class="col-xs-12" ng-view></div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
+    <script src="app.js"></script>
+    <script src="services.js"></script>
+    <script src="character.js"></script>
+    <script src="home.js"></script>
+
+
+</body>
+
+</html>

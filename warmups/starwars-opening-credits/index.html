@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="openingCredits">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Star Wars</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body ng-controller="mainController">
+    <p id="start">l</p>
+    <h1>S</h1>
+
+    <div id="titles">
+
+        <div id="titlecontent">
+           <h2>Episode I</h2>
+            <h2>{{ credits.title }}</h2>
+            <br>
+            <p>{{ credits.opening_crawl }}</p>
+            <br>
+            <p>{{ credits.director }}</p>
+            <br>
+            <p>{{ credits.producer }}</p>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>

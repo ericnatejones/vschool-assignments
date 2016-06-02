@@ -1,0 +1,54 @@
+.completed {
+    text-decoration: line-through;
+}
+
+.container {
+    width: 95%;
+    margin: auto;
+    text-align: center;
+    margin-top: 2em;
+}
+
+.btn:focus,
+.btn:active,
+.btn:focus:active {
+    outline: none;
+}
+
+input {
+    margin-bottom: 2em;
+}
+
+.submit,
+.update {
+    width: 60px;
+    height: 60px;
+    border-radius: 500px;
+}
+
+.update {
+    margin-top: -16px;
+    margin-bottom: 16px;
+}
+
+.editButtons {
+    width: 40px;
+    height: 40px;
+    border-radius: 500px;
+    margin: 1em;
+    font-size: .70em;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+img {
+    max-height: 250px;
+}

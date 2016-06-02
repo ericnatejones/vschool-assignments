@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="favoriteState">
+
+<head>
+    <meta charset="UTF-8">
+    <title>California</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="container-fluid">
+
+    <div class="nav row">
+        <nav>
+            <a class="col-xs-12 col-md-4" href="#/">Home</a>
+            <a class="col-xs-12 col-md-4" href="#about">About</a>
+            <a class="col-xs-12 col-md-4" href="#whyilove">Why I Love</a>
+        </nav>
+    </div>
+    
+    <br>
+    <br>
+    <br>
+
+    <div class="view col-xs-12 col-lg-8 col-lg-offset-2" ng-view></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
+    <script src="app.js"></script>
+    <script src="home/home.js"></script>
+    <script src="about/about.js"></script>
+    <script src="whyilove/whyilove.js"></script>
+</body>
+
+</html>
