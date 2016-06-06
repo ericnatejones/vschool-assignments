@@ -1,0 +1,12 @@
+<div class="container-fluid favorites">
+    <h1>My Favorite Ponies</h1>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 viewDiv" ng-repeat="pony in PonyService.ponyList track by $index">
+            <div class="image">
+                <img class=" " ng-src="{{ pony.imgUrl }}" alt="">
+            </div>
+            <p>{{ pony.name }}</p>
+            <button class="btn btn-danger" ng-click="deletePony(pony, $index)">Delete Pony</button>
+        </div>
+    </div>
+</div>

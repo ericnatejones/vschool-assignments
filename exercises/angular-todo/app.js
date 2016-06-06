@@ -59,16 +59,16 @@ app.service("EntryService", ["$http", function ($http) {
     this.deleteEntry = function (toDo) {
         return $http.delete("http://mean.codingcamp.us/jackmcb/todo/" + toDo._id)
     }
-    
+
     this.getEntry = function () {
         return $http.get("http://mean.codingcamp.us/jackmcb/todo/")
     }
-    
-       this.putEntry = function (toDo) {
+
+    this.putEntry = function (toDo) {
         return $http.put("http://mean.codingcamp.us/jackmcb/todo/" + toDo._id, toDo)
     }
-       
-          this.postEntry = function (toDo) {
+
+    this.postEntry = function (toDo) {
         return $http.post("http://mean.codingcamp.us/jackmcb/todo/", toDo)
     }
 

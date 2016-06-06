@@ -1,5 +1,6 @@
 <div class="home">
-    <div class="thumbnail" ng-repeat="character in characters" style="background-image: url(http://ddragon.leagueoflegends.com/cdn/6.10.1/img/champion/{{ character.image.full }}">
-    <a class="charImage"  href="#/character/{{ character.key }}"><span class="aSpan">{{ character.name }}</span></a>
+   <h3 class="select">Select a Character to Learn More</h3>
+
+    <div class="thumbnails" ng-repeat="character in characters" style="background-image: url(http://ddragon.leagueoflegends.com/cdn/6.10.1/img/champion/{{ character.image.full }}">
+    <a ng-click="scroll()" class="charImage"  href="#/character/{{ character.key }}"><span class="aSpan">{{ character.name}}</span></a>
     </div>
-</div>

@@ -1,24 +1,79 @@
+<h1 class="cuteNav1">
+    
+    <a ng-click="scroll()" class="prev" href="#/character/{{ prevPage }}">Previous</a>
+    
+    <a ng-click="scroll()" class="next" href="#/character/{{ nextPage }}">Next</a>
+    
+    </h1>
+
 <div class="backgroundDiv" style="background-image: url(http://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{ character.key }}_0.jpg)">
-    <div class="windowDiv">
+    <div class="windowDiv container-fluid">
         <h1>{{ character.name }}</h1>
         <h2>{{ character.title }}</h2>
         <h4 ng-repeat="tag in character.tags track by $index"> {{ tag }} </h4>
-        <h3>Spells</h3>
-        <h4 ng-repeat="spell in character.spells track by $index">{{ spell.name }}: {{ spell.description }} <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.11.1/img/spell/{{spell.image.full }}" alt=""></h4>
-        <h3>Passive</h3>
-        <h4>{{ character.passive.name }}: {{ character.passive.description }} <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.11.1/img/passive/{{ character.passive.image.full}}" alt=""></h4>
-        <h3>Ally Tips</h3>
-        <h4 ng-repeat="tip in character.allytips track by $index">{{ tip }}</h4>
-        <h3>Lore</h3>
-        <h4>{{ character.lore }}</h4>
-        <h3>Info</h3>
-        <h4 ng-repeat="(key,value) in character.info track by $index">{{ key }}: {{ value }}</h4>
-        <h3>Stats</h3>
-        <h4>{{ character.stats.armor }}</h4>
-        <br>
+        <div class="row">
 
+            <div class="infoContainer col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
 
+                <p class="stat" ng-repeat="(key,value) in character.info track by $index"> {{ key }}: {{ value }} &nbsp; &nbsp;
+                </p>
 
-        <img ng-repeat="skin in character.skins" ng-src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{ character.key }}_{{ skin.num }}.jpg" alt="">
+            </div>
+
+            <div class="spellContainer col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+                <h3>Passive</h3>
+
+                <img class="spellImage" ng-src="http://ddragon.leagueoflegends.com/cdn/6.11.1/img/passive/{{ character.passive.image.full}}" alt="">
+                <div class="spell passiveDiv">
+                    <h4>{{ character.passive.name }}</h4>
+                    <p class="spellP">{{ character.passive.sanitizedDescription }}</p>
+                </div>
+
+                <h3>Spells</h3>
+
+                <div ng-repeat="spell in character.spells track by $index" class="col-xs-6 col-sm-3 spellDiv">
+
+                    <img tabindex="1" ng-focus="show($index)" class="spellImage" ng-src="http://ddragon.leagueoflegends.com/cdn/6.11.1/img/spell/{{spell.image.full }}" alt="">
+                    <br>
+
+                </div>
+                <div class="spell">
+                    <h4>{{ spellName }}</h4>
+                    <p class="spellP">{{ spellDescription }}</p>
+
+                </div>
+
+            </div>
+
+            <div class="subNav">
+                <h3 class="col-xs-12 subNavTitle">Tips</h3>
+                <br>
+                <div class="subNavItem tipsContainer col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+                    <ul>
+                        <li ng-repeat="tip in character.allytips track by $index">{{ tip }}
+                        </li>
+                    </ul>
+                </div>
+                <br>
+                <h3 class="col-xs-12 subNavTitle">Lore</h3>
+                <br>
+                <div class="subNavItem loreContainer col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 ">
+
+                    <p>{{ character.lore }}</p>
+                </div>
+            </div>
+            <br>
+            <br>
+        </div>
+        <h3 class="subNavTitle">Skins</h3>
+
+        <div class="splashDiv">
+            <div ng-repeat="skin in character.skins">
+                <a ng-click="scroll()" href="#/character/{{ character.key }}/{{ skin.num }}">
+                    <img class="splash col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{ character.key }}_{{ skin.num }}.jpg">
+                </a>
+            </div>
+
+        </div>
     </div>
 </div>

@@ -1,32 +1,31 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="theLeague">
+<html lang="en" ng-app="bronyApp">
 
 <head>
     <meta charset="UTF-8">
-    <title>League of Legends</title>
+    <title>Bronies</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
-
 </head>
 
 <body>
-    <div ng-controller="indexController" class="nav">
+    <div class="nav">
         <nav>
-            <a ng-click="scroll()"class="mainTitle" href="#/">The League</a>
+            <ul>
+                <li><a href="#/ponyList">View Favorite Ponies</a></li>
+                <li><a href="#/">Add Pony</a></li>
+            </ul>
         </nav>
     </div>
 
-    <div ng-view></div>
-
+    <div class="theView" ng-view></div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
     <script src="app.js"></script>
-    <script src="services.js"></script>
-    <script src="character.js"></script>
-    <script src="home.js"></script>
-    <script src="skin.js"></script>
-
+    <script src="PonyService.js"></script>
+    <script src="add.js"></script>
+    <script src="view.js"></script>
 
 </body>
 
