@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="bountyApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bounty List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="container-fluid" ng-controller="MainController">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1  bounties">
+        <h1>Add Bounty</h1>
+        <div class="row">
+            <form name="userForm" class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 col-lg-6">
+                <input required class="form-control" ng-model="bountyPost.firstName" placeholder="First Name..." type="text">
+                <input required class="form-control" ng-model="bountyPost.lastName" placeholder="Last Name..." type="text">
+                <input required class="form-control" ng-model="bountyPost.living" placeholder="Alive?" type="boolean">
+                <input required class="form-control" ng-model="bountyPost.bountyAmount" placeholder="Bounty Price..." type="number">
+                <input required class="form-control" ng-model="bountyPost.type" placeholder="Sith or Jedi..." type="text">
+            </form>
+            <button ng-class="{hidden : edit}" ng-disabled="userForm.$invalid" class="col-xs-4 col-xs-offset-4 btn btn-primary" ng-click="addBounty()">Add Bounty</button>
+            <button ng-disabled="userForm.$invalid" ng-class="{hidden : !edit}" ng-click="updateBounty(bounty)" class="
+glyphicon glyphicon-wrench update btn btn-primary">
+            </button>
+        </div>
+
+        <h1>Bounties</h1>
+
+        <div class="bounty" ng-repeat="bounty in bounties track by $index">
+            <h2>{{ bounty.firstName }} {{ bounty.lastName }}</h2>
+            <h3>{{ bounty.type }}</h3>
+            <p>Alive? - {{ bounty.living }} </p>
+            <p>Price: {{ bounty.bountyAmount }}</p>
+            <button class="glyphicon glyphicon-trash btn btn-danger" ng-click="deleteBounty( $index)"></button>
+            <button class="glyphicon glyphicon-pencil btn btn-info" ng-click="editBounty(bounty, $index)"></button>
+
+        </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

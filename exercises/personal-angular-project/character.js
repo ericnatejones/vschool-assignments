@@ -50,22 +50,22 @@ app.controller("CharacterController", ["$scope", "getService", "$routeParams", f
             nextChar = thisChar,
             prevChar = thisChar;
 
-        if (thisChar < newArray.length-1) {
+        if (thisChar < newArray.length - 1) {
             nextChar++;
         } else {
             nextChar = 0;
         };
         if (thisChar == 0) {
-            prevChar = newArray.length-1;
+            prevChar = newArray.length - 1;
         } else {
             prevChar = prevChar - 1;
         };
 
         $scope.nextPage = newArray[nextChar];
         $scope.prevPage = newArray[prevChar];
-        
-        $scope.scroll = function() {
-            window.scroll(0,0);
+
+        $scope.scroll = function () {
+            window.scroll(0, 0);
         }
 
     });

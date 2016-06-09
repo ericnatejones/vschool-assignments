@@ -48,7 +48,7 @@ glyphicon glyphicon-wrench update btn btn-primary">
                         <img ng-src="{{toDo.imgUrl}}" alt="">
                         <p>{{ toDo.description }}</p>
                         <p>{{ toDo.price | currency }}</p>
-                        <button ng-click="makeEdit(toDo, $index)" class="glyphicon glyphicon-pencil editButtons btn btn-info"></button>
+                        <button ng-click="makeEdit(toDo)" class="glyphicon glyphicon-pencil editButtons btn btn-info"></button>
                         <button ng-click="deleteToDo(toDo, $index)" class="glyphicon glyphicon-trash editButtons btn btn-danger comlete"></button>
                         <button ng-click="complete(toDo,$index)" class="glyphicon glyphicon-ok editButtons btn btn-primary comlete"></button>
 

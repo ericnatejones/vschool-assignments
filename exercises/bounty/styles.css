@@ -1,0 +1,21 @@
+body {
+    background-image: url(maxresdefault.jpg);
+    text-align: center;
+    color: white;
+}
+
+.form-control {
+    margin-bottom: 1em;
+}
+
+.bounties {
+    background-color: rgba(0, 0, 0, .75);
+    border-radius: 200px;
+    margin-top: 5em;
+    padding: 2em;
+}
+
+.bounty {
+    display:inline-block;
+    padding: 1em;
+}
