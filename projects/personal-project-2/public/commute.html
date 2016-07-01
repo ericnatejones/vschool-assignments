@@ -1,0 +1,47 @@
+<h1>{{ commute.title }}</h1>
+
+<h3>Add Trip</h3>
+<h3>{{ commuteLength | timeFilter }}</h3>
+<div class="controls row">
+    <button class="btn btn-success" ng-click="startTimer()"><span class="glyphicon glyphicon-road"></span></button>
+    <button class="btn btn-warning" ng-click="pauseTimer()"><span class="glyphicon glyphicon-pause"></span></button>
+    <button class="btn btn-info" ng-click="addTrip()"><span class="glyphicon glyphicon-floppy-save"></span></button>
+</div>
+
+<h2>Statistics</h2>
+
+<div class="row">
+    <p class="col-xs-6 col-sm-5 col-sm-offset-2 col-md-3 col-md-offset-4">Trips:</p>
+    <p class="col-xs-6 col-sm-5 col-md-3">{{ commute.trips.length }}</p>
+</div>
+<div class="row">
+    <p class="col-xs-6 col-sm-5 col-sm-offset-2 col-md-3 col-md-offset-4">Total Commute Time:</p>
+    <p class="col-xs-6 col-sm-5 col-md-3">{{ totalTripTime | timeFilter }}</p>
+</div>
+<div class="row">
+    <p class="col-xs-6 col-sm-5 col-sm-offset-2 col-md-3 col-md-offset-4">Average Commute Time:</p>
+    <p class="col-xs-6 col-sm-5 col-md-3">{{ averageTripTime | timeFilter }}</p>
+</div>
+<div class="row">
+    <p class="col-xs-6 col-sm-5 col-sm-offset-2 col-md-3 col-md-offset-4">Longest Commute Time:</p>
+    <p class="col-xs-6 col-sm-5 col-md-3">{{ longestTripTime | timeFilter }}</p>
+</div>
+<div class="row">
+    <p class="col-xs-6 col-sm-5 col-sm-offset-2 col-md-3 col-md-offset-4">Shortest Commute Time:</p>
+    <p class="col-xs-6 col-sm-5 col-md-3">{{ shortestTripTime | timeFilter }}</p>
+</div>
+<div class="row">
+    <p class="col-xs-6 col-sm-5 col-sm-offset-2 col-md-3 col-md-offset-4">Median Commute Time:</p>
+    <p class="col-xs-6 col-sm-5 col-md-3">{{ medianTripTime | timeFilter }}</p>
+</div>
+<h2>Trips</h2>
+<div ng-repeat="trip in commute.trips" class="row trip">
+    <p class="col-xs-6 col-sm-5 col-sm-offset-2 col-md-3 col-md-offset-4">{{ trip.date | date : "short" }}</p>
+    <p class="col-xs-4 col-sm-3 col-md-3"> {{ trip.time | timeFilter }}</p>
+    <div class="tripDelete col-xs-1 col-sm-1 col-md-1">
+        <button class="deleteTrip btn btn-danger" ng-click="deleteTrip()"><span class="glyphicon glyphicon-trash"></span></button>
+    </div>
+</div>
+<div class="deleteCommuteRow row">
+    <button class="btn btn-danger deleteCommute" ng-click="deleteCommute()">Delete Commute</button>
+</div>

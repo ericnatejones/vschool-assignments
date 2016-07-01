@@ -1,0 +1,276 @@
+body {
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    position: relative;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    padding: 1em;
+    letter-spacing: .5em;
+    font-variant: small-caps;
+}
+
+.line {
+    margin-top: 40px
+}
+
+.lines {
+    border-bottom: 4px solid #29BBF2;
+    color: transparent;
+    padding-bottom: 1em;
+}
+
+.linesInvert {
+    border-bottom: 4px solid white;
+    color: transparent;
+    padding-bottom: 1em;
+}
+
+h4 {
+    text-align: center;
+    margin-top: -60px
+}
+
+h2 {
+    padding-bottom: .5em;
+    padding-top: 1em;
+}
+
+.navList {
+    list-style: none;
+    padding-left: 0;
+    position: fixed;
+    width: 100%;
+    background-color: rgba(255, 255, 255, .90);
+    z-index: 1000000;
+    color: black;
+    box-sizing: border-box;
+}
+
+.listContent {
+    display: inline-block;
+    box-sizing: border-box;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    line-height: 2em;
+    color: black;
+}
+
+.listContent:hover,
+.listContent:focus {
+    border-bottom: 5px solid #29BBF2;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #29BBF2;
+}
+
+.title {
+    text-align: center;
+    font-size: 2em;
+    letter-spacing: .3em;
+    line-height: 1.35em;
+    overflow: hidden;
+}
+
+.titleColor {
+    color: #29BBF2;
+}
+
+.title:hover,
+.title:focus {
+    color: black;
+}
+
+.navButton {
+    margin-top: 10px;
+    background-color: #29BBF2;
+    border-color: #29BBF2;
+}
+
+.navButton:hover {
+    background-color: black;
+    border-color: #29BBF2;
+    color: #29BBF2;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    color: white;
+    position: absolute;
+    width: 370px;
+    margin: auto;
+    left: -328px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, .95);
+    font-size: 1.5em;
+    letter-spacing:
+}
+
+.dropdown-menu li a {
+    color: white;
+    padding: 1em;
+}
+
+.dropdown-menu li a:hover {
+    background-color: rgba(41, 187, 242, .5);
+    color: white;
+}
+
+.tag {
+    z-index: 5000;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .8);
+    color: white;
+}
+
+.show {
+    margin-top: 62px;
+}
+
+.opacity {
+    background-color: rgba(255, 255, 255, .5);
+    height: 600px;
+    width: 100%;
+}
+
+.portfolio {
+    margin-top: 50px;
+    margin-bottom: -45px;
+    font-variant: small-caps;
+    font-weight: bold;
+    letter-spacing: .5em;
+}
+
+.background,
+.background2,
+.background3 {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 350px;
+}
+
+.background {
+    background-image: url(images/League.png);
+    background-position: center top;
+}
+
+.background2 {
+    background-image: url(images/business.png);
+    background-position: center top;
+}
+
+.background3 {
+    background-image: url(images/kandj.png);
+    background-position: left top;
+}
+
+.skillLogos {
+    width: 150px;
+    height: auto;
+    margin-top: 3em;
+}
+
+.skillLogosWide {
+    width: 300px;
+    height: auto;
+    margin-top: 3em;
+}
+
+.skillLogoDiv {
+    padding-top: 5em;
+}
+
+.contact {
+    background-color: #29BBF2;
+    color: white;
+}
+
+p {
+    font-size: 1.2em;
+    letter-spacing: .1em;
+}
+
+.contactInfo {
+    color: white;
+    text-decoration: none;
+}
+
+.contactInfo:hover {
+    color: #F91E2D;
+    text-decoration: none;
+}
+
+.social {
+    font-size: 2em;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    padding: 8px;
+    border: 2px solid white;
+    color: white;
+    margin: .25em;
+    margin-bottom: 100px;
+    transition-duration: .5s;
+    transition-property: transform;
+}
+
+.social:hover {
+    background-color: white;
+    color: #F91E2D;
+    transform: scale(1.25) rotate(360deg);
+}
+
+.eduBadge {
+    height: 150px;
+    width: 150px;
+}
+
+.eduBadge1 {
+    height: 100px;
+    width: auto;
+}
+
+.edu {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.job {
+    text-align: justify;
+    padding-top: 4em;
+}
+
+.info {
+    padding-top: 10em;
+    padding-bottom: 10em;
+}
+
+.port {
+    height: 400px;
+    width: auto;
+    border-radius: 200px;
+    box-shadow: 1px 1px 10px 3px gray;
+}
+
+@media screen and (min-width: 768px) {
+    .tag {
+        margin-top: 100px;
+        border-radius: 50px;
+        height: 70%;
+    }
+    .background,
+    .background2,
+    .background3 {
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        height: 600px;
+    }
+}

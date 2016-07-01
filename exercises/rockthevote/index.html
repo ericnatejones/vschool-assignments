@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="rockApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="container-fluid" ng-controller="mainController">
+
+    <div class="header row">
+        <h1>Rock the Vote</h1>
+        <h2>A Place to Speak Your Mind</h2>
+    </div>
+
+    <div class="row">
+        <h3>Add a discussion, or browse the discussions below.</h3>
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+            <input class="addInputs form-control" ng-model="issue.title" placeholder="Title..." type="text">
+            <input class="addInputs form-control" ng-model="issue.description" placeholder="Description..." type="text">
+            <input class="addInputs form-control" ng-model="issue.imgUrl" placeholder="Image URL..." type="text">
+            <button ng-click="addIssue(issue)" class="addIssue btn btn-primary"><span class="comment">Submit</span></button>
+        </div>
+    </div>
+
+    <div class="issue col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="issue in rockService.issues | orderBy: '-popularity'">
+        <h2>{{ issue.title }}</h2>
+        <div class="image">
+            <img ng-src="{{ issue.imgUrl }}" alt="">
+        </div>
+        <div class="descriptionDiv">
+            <p class="description">{{ issue.description }}</p>
+        </div>
+        <button ng-click="upVote(issue)" class="up btn btn-success glyphicon glyphicon-thumbs-up"></button>
+        <button ng-click="downVote(issue)" class="down btn btn-danger glyphicon glyphicon-thumbs-down"></button>
+        <p class="pop"> Votes: {{ issue.popularity }}</p>
+        <br>
+        <input class="commentInput form-control" placeholder="Add Comment..." ng-model="comment" type="text">
+        <button ng-click="addComment(issue, comment)" class="commentButton btn btn-info glyphicon glyphicon-pencil"> <span class="comment">Submit</span></button>
+        <!--        <button ng-click="deleteIssue(issue)" class="delete btn btn-danger glyphicon glyphicon-trash"></button><-->
+        <div class="comments">
+            <p ng-repeat="entry in issue.comments track by $index">{{ entry }}</p>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="voteService.js"></script>
+</body>
+
+</html>

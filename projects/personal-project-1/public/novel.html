@@ -1,0 +1,14 @@
+<h1 class="novelsTitle">{{ novel.title }}</h1>
+<div class="nav2 row">
+    <a class="navItems col-xs-3" href="#/">Home</a>
+    <a class="navItems col-xs-3" href="#/novels">Novels</a>
+    <a class="navItems col-xs-3" href="#/about">Author</a>
+    <a class="navItems col-xs-3" href="#/blog">Blog</a>
+</div>
+
+<div class="row margin">
+    <img src="{{ novel.bookcover}}" alt="" class="cover">
+</div>
+<div class="blurb col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+    <p>{{ novel.blurb }}</p>
+</div>

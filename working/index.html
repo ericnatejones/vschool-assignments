@@ -1,30 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="learningAngular">
+<html lang="en" ng-app="directiveApp">
 
 <head>
     <meta charset="UTF-8">
-    <title>Angular Practice</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Directives Bro</title>
 </head>
 
 <body ng-controller="MainController">
+<!--    <h1 ng-repeat="player in players | orderBy: 'rank' ">{{ player.name }}</h1>-->
+<h1>{{ 2 | number | ordinal }}</h1>
+    <!--    <contact-card contact="contact" ></contact-card>-->
 
-    <label for="">Type your name: </label>
-    <input type="text" ng-model="person.name">
-    <br>
-
-    <h1>{{ person.name }}</h1>
-
-    <h1>Today's nursing home birthdays: </h1>
-    <div ng-repeat="person in people">
-
-        <h3>{{ person.name }}</h3>
-        <p>They're only {{ person.age }} years old!</p>
-
-    </div>
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="main.js"></script>
 </body>
 

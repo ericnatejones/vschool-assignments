@@ -1,0 +1,52 @@
+<div class="container-fluid">
+    <h1 class="novelsTitle"><a href="#/">Blog Post</a></h1>
+    <div class="nav2 row">
+        <a class="navItems col-xs-3" href="#/">Home</a>
+        <a class="navItems col-xs-3" href="#/novels">Novels</a>
+        <a class="navItems col-xs-3" href="#/about">Author</a>
+        <a class="navItems col-xs-3" href="#/blog">Blog</a>
+    </div>
+    <div class="row margin">
+        <div class="article col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+            <h2 class="articleTitle">{{ article.title }}</h2>
+            <p class="articleDate">{{ article.date | date : "short" }}</p>
+            <p class="articleBody">{{ article.body }}</p>
+            <div class="row">
+                <div class="tagDiv col-xs-6">
+                    <p class="tagTitle">Tags: </p>
+                    <a ng-repeat="tag in article.tags track by $index" class="tags" href="{{ tag.endpoint }}"> {{ tag.name }}, </a>
+                </div>
+                <div class="commentDiv col-xs-6">
+                    <a ng-click="commentScroll()">Add Comment</a>
+                </div>
+            </div>
+
+            <div class="row margin">
+                <h3>Comments</h3>
+                <div class="comment" ng-repeat="comment in article.comments track by $index">
+                    <div class="commentRow row">
+                        <p class="commentUser col-xs-12 col-sm-6">{{ comment.user }}</p>
+                        <p class="commentDate col-xs-12 col-sm-6">{{ comment.date | date : "short" }}</p>
+                    </div>
+                    <div class="row commentBodyRow">
+                        <p class="commentBody">{{ comment.body }}</p>
+                        <div class="button">
+                            <span ng-click="upVote($index)" class="btn glyphicon glyphicon-thumbs-up"></span>
+                            <span ng-click="downVote($index)" class="btn glyphicon glyphicon-thumbs-down"></span>
+                            <span class="likes">Likes: {{ comment.likes }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                <h3 id="add">Add Comment</h3>
+                <textarea name="addComment" id="addComment" cols="28" rows="5" placeholder="Add Comment..." ng-model="pendingComment"></textarea>
+                <br>
+                <a class="addLink" ng-click="addComment(pendingComment)">Submit</a>
+            </div>
+            <br>
+            <br>
+            <a ng-click="scroll()">Back to Top</a>
+        </div>
+    </div>

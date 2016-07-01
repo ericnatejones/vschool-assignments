@@ -1,0 +1,11 @@
+<h1 class="novelsTitle"><a href="#/">Novels</a></h1>
+<div class="nav2 row">
+    <a class="navItems col-xs-4" href="#/">Home</a>
+    <a class="navItems col-xs-4" href="#/about">Author</a>
+    <a class="navItems col-xs-4" href="#/blog">Blog</a>
+</div>
+<div class="row margin">
+    <div class="novelContainer col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="novel in novels track by $index">
+        <a href="#/novels/{{ novel._id }}"><img class="bookcover" ng-src="{{ novel.bookcover }}" alt=""></a>
+    </div>
+</div>

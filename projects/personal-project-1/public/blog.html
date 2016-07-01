@@ -1,0 +1,24 @@
+<div class="container-fluid">
+    <h1 class="novelsTitle">Blog</h1>
+    <div class="nav2 row">
+        <a class="navItems col-xs-4" href="#/">Home</a>
+        <a class="navItems col-xs-4" href="#/novels">Novels</a>
+        <a class="navItems col-xs-4" href="#/about">Author</a>
+    </div>
+    <div class="row margin">
+        <div class="article col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4" ng-repeat="article in articles track by $index">
+            <h2 class="articleTitle"><a href="#/blog/{{ article._id }}">{{ article.title }}</a></h2>
+            <p class="articleDate">{{ article.date }}</p>
+            <p class="articleBody">{{ article.body }}</p>
+            <div class="row">
+                <div class="tagDiv col-xs-6">
+                    <p class="tagTitle">Tags: </p>
+                    <a ng-repeat="tag in article.tags track by $index" class="tags" href="{{ tag.endpoint }}"> {{ tag.name }},  </a>
+                </div>
+                <div class="commentDiv col-xs-6">
+                    <a href="#/blog/{{ article._id }}">{{ article.comments.length }} Comments</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

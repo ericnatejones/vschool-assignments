@@ -1,0 +1,12 @@
+<h1>STATS</h1>
+
+<h2>Trips: {{ commute.trips.length }}</h2>
+<h2>Total Commute Time: {{ totalTripTime | timeFilter }}</h2>
+<h2>Average Commute Time: {{ averageTripTime | timeFilter }}</h2>
+<h2>Longest Commute Time: {{ longestTripTime | timeFilter }}</h2>
+<h2>Shortest Commute Time: {{ shortestTripTime | timeFilter }}</h2>
+<h2>Median Commute Time: {{ medianTripTime  | timeFilter }}</h2>
+
+<div ng-repeat="times in commute.trips">
+    {{ times.time | timeFilter}}
+</div>

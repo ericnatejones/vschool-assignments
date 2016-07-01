@@ -1,0 +1,14 @@
+<h1>Commutes</h1>
+<div ng-repeat="commute in commutes">
+    <h3><a href="#/commutes/{{ commute._id }}">{{ commute.title }}</a></h3>
+</div>
+
+<h2>Add Commute</h2>
+
+<form role="form" action="">
+    <input placeholder="Title..." class="form-control" ng-model="title" type="text">
+    <input placeholder="Notes..." class="form-control" ng-model="notes" type="text">
+</form>
+<div class="saveCommute">
+    <button class="btn btn-info" ng-click="addCommute(title,notes)"><span class="glyphicon glyphicon-floppy-save"></span></button>
+</div>
